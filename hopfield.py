@@ -8,9 +8,9 @@ class hopfield():
         self.weights = np.zeros((self.ndim, self.ndim))
 
     def train(self, sample):
-        xbin = np.where(sample > 0.1, 1, -1)
+        xbin = np.where(sample > 0.1, 1, -1) # Binary dipole
         memory = np.array([xbin])
-        self.weights += (memory.T * memory)
+        self.weights += (memory.T * memory) # Hebbian learning
 
     def infer(self, state, units):
         for _ in range(units):
