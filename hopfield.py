@@ -7,10 +7,12 @@ class hopfield():
         self.ndim = ndim
         self.weights = np.zeros((self.ndim, self.ndim))
 
-    def train(self, sample):
-        xbin = np.where(sample > 0.1, 1, -1) # Binary dipole
-        memory = np.array([xbin])
-        self.weights += (memory.T * memory) # Hebbian learning
+    def train(self, data, threshold):
+        for _, sample in enumerate(data):
+            memory = np.array([np.where(sample > threshold, 1, -1)])
+            self.weights += (memory.T * memory)
+            np.fill_diagonal(self.weights, 0)
+        self.weights /= data.shape[0]
 
     def infer(self, state, units):
         for _ in range(units):
@@ -21,8 +23,8 @@ class hopfield():
                 state[rand_idx] = 1
             else:
                 state[rand_idx] = -1
-        
+
         return state
 
     def compute_energy(self, state):
-        return -np.dot(np.dot(self.weights, state), state.T)
+        return -0.5 * np.dot(np.dot(self.weights, state), state.T)
