@@ -24,9 +24,12 @@ Graph-based segmentation and abstraction.
 Attractor dynamics of recurrent neural circuits offer a biologically plausiable for hierarchical segmentation.
 Relationship between attrator networks and the graph-theoretic processing of knowledge structures.
 
-- Chunking of items; increasing the number of items retained in the limited capacity of working memory
-- Segmentation of words; learning and comprehension of language
-- Temporal abstraction of repeated sequences; accelerates reinforcement learning
+- Chunking of items
+    - Increasing the number of items retained in the limited capacity of working memory
+- Segmentation of words
+    - Learning and comprehension of language
+- Temporal abstraction of repeated sequences
+    - Accelerate reinforcement learning
 
 ++ What is the neurological representation?
 - Having experienced a seqence of events, the brain, learns the temporal associations between the successive events and captures the structure of a state-transition graph
@@ -35,23 +38,35 @@ Relationship between attrator networks and the graph-theoretic processing of kno
 - Asymmetrical links generate chunked sequential activities in the hippocampus
 
 ++ Build
-- Datasets [3]: Repeat graph, karate club network and the structure compartmentalised rooms
-- Hopfield RNN - Hebbian learning (spike-timing-dependant plasticity), pattern completion and attractor states
-- LAM network with hetero-associative weights - Adjacency graph matrices 
-- Laplacian eigenvectors - unsupervised learning?
-- Random binary patern to each node
-
 Feature | Notes
 ------- | -------
-Arbitary symmetrical graphs | Generalise the one-dimensional sequential structure of temporal associations of the conventional model - Hopfield?
+Arbitary symmetrical graphs | Generalise the one-dimensional sequential structure of temporal associations of the conventional hopfield model
 Negative associated weights | Assembly specific inhibition
 
-++ Unknown concepts and observations<br>
-Community structures
-Auto-associative memory networks
-Subgoal finding in RL
-Local and global inhibitory circuits
-Kronecker delta
-Relationship between LAM and Laplacian
+- Datasets
+    - Original graph
+    - Karate club network
+    - The structure of compartmentalised rooms
+    - new image-based, RL & robotic?
+- Hopfield RNN
+    - Hebbian learning (spike-timing-dependant plasticity)
+    - Pattern completion
+    - Attractor states
+- LAM network with hetero-associative weights
+    - Adjacency graph matrices 
+- Laplacian eigenvectors 
+    - Unsupervised learning?
 
-++ Questions?<br>
+- Random binary pattern to each node
+
+++ Unknown concepts and observations<br>
+- State-transition
+- Community structures
+- Association memory networks (Auto & Hetero)
+- Subgoal finding in RL
+- Local and global inhibitory circuits
+- Kronecker delta
+- Relationship between LAM and Laplacian
+- Pattern overlap
+- Cell assembilies
+- Abstract excitatory and inhibitatory activity
