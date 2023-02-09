@@ -17,7 +17,7 @@ Abstract: *An extended attractor network model for graph-based hierarchical comp
 
 #### WORK-IN-PROGRESS
 
-++ Concept
+++ Concept<br>
 Attractor dynamics of recurrent neural circuits offer a biologically plausiable for hierarchical segmentation.
 Relationship between attrator networks and the graph-theoretic processing of knowledge structures.
 
