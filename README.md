@@ -15,4 +15,4 @@ Abstract: *An extended attractor network model for graph-based hierarchical comp
 
 --------------------------------------------------------------------
 
-## WORK-IN-PROGRESS
+# WORK-IN-PROGRESS
