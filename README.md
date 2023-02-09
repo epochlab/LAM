@@ -16,9 +16,9 @@ Abstract: *An extended attractor network model for graph-based hierarchical comp
 
 --------------------------------------------------------------------
 
-#### WORK-IN-PROGRESS
+## WORK-IN-PROGRESS
 
-++ Concept<br>
+#### Concept
 Graph-based segmentation and abstraction.
 
 Attractor dynamics of recurrent neural circuits offer a biologically plausiable for hierarchical segmentation.
@@ -31,13 +31,13 @@ Relationship between attrator networks and the graph-theoretic processing of kno
 - Temporal abstraction of repeated sequences
     - Accelerate reinforcement learning
 
-++ What is the neurological representation?
+#### What is the neurological representation?
 - Having experienced a seqence of events, the brain, learns the temporal associations between the successive events and captures the structure of a state-transition graph
 - Event segmentation performed by humans reflects community structures (clusters)
 - Characteristics of place cells and entorhinal grid cells
 - Asymmetrical links generate chunked sequential activities in the hippocampus
 
-++ Build
+#### Build
 - Datasets
     - Original graph
     - Karate club network
@@ -57,7 +57,7 @@ Relationship between attrator networks and the graph-theoretic processing of kno
 
 - Random binary pattern to each node
 
-++ Unknown concepts and observations<br>
+#### Unknown concepts and observations
 - State-transition
 - Community structures
 - Association memory networks (Auto & Hetero)
