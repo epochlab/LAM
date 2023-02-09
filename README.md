@@ -30,7 +30,7 @@ Graph-based segmentation and abstraction.
 ++ What is the neurological representation?<br>
 
 ++ Build<br>
-Datasets
+Datasets<br>
 Hopfield RNN
 
 Feature | Notes
