@@ -37,6 +37,8 @@ Relationship between attrator networks and the graph-theoretic processing of kno
 - Characteristics of place cells and entorhinal grid cells
 - Asymmetrical links generate chunked sequential activities in the hippocampus
 
+### Research questions?
+
 ### Build
 - Datasets
     - Original graph
@@ -64,7 +66,7 @@ Community structures |
 Association memory networks (Auto & Hetero) | 
 Subgoal finding in RL | 
 Local and global inhibitory circuits | 
-Kronecker delta |
+Kronecker delta | 
 Relationship between LAM and Laplacian | 
 Pattern overlap | 
 Cell assembilies | 
