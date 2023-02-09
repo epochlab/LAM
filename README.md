@@ -11,8 +11,8 @@
 #### Laplacian Associative Memory (LAM)
 Abstract: *An extended attractor network model for graph-based hierarchical computation, generating multiscale representations for communities (clusters) of associative links between memory items, and the scale is regulated by the heterogenous modulation of inhibitory circuits.*
 
+[Hopfield, 1982](https://www.researchgate.net/publication/16246447_Neural_Networks_and_Physical_Systems_with_Emergent_Collective_Computational_Abilities)
 [LAM, 2021](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC8412329/pdf/pcbi.1009296.pdf)
-[Hopfield, 1982](https://sci-hub.ru/10.1073/pnas.79.8.2554)
 
 --------------------------------------------------------------------
 
@@ -49,13 +49,11 @@ Relationship between attrator networks and the graph-theoretic processing of kno
     - Attractor states
 - Key features
     - Arbitary symmetrical graphs; generalise the one-dimensional sequential structure of temporal associations of the conventional hopfield model
-    - Negative associated weights; Assembly specific inhibition
+    - Negative associated weights; assembly specific inhibition
 - LAM network with hetero-associative weights
     - Adjacency graph matrices 
 - Laplacian eigenvectors 
     - Unsupervised learning?
-
-- Random binary pattern to each node
 
 ### Unknown concepts and observations
 - State-transition
