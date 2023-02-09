@@ -11,7 +11,8 @@
 #### Laplacian Associative Memory (LAM)
 Abstract: *An extended attractor network model for graph-based hierarchical computation, generating multiscale representations for communities (clusters) of associative links between memory items, and the scale is regulated by the heterogenous modulation of inhibitory circuits.*
 
-[Original Paper, 2021](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC8412329/pdf/pcbi.1009296.pdf)
+[LAM, 2021](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC8412329/pdf/pcbi.1009296.pdf)
+[Hopfield, 1982](https://sci-hub.ru/10.1073/pnas.79.8.2554)
 
 --------------------------------------------------------------------
 
@@ -36,7 +37,9 @@ Graph-based segmentation and abstraction.
 ++ Build
 - Datasets [3]: Repeat graph, karate club network and the structure compartmentalised rooms
 - Hopfield RNN - Hebbian learning (spike-timing-dependant plasticity), pattern completion and attractor states
+- LAM network with hetero-associative weights - Adjacency graph matrices 
 - Laplacian eigenvectors - unsupervised learning?
+- Random binary patern to each node
 
 Feature | Notes
 ------- | -------
@@ -44,10 +47,11 @@ Arbitary symmetrical graphs | Generalise the one-dimensional sequential structur
 Negative associated weights | Assembly specific inhibition
 
 ++ Unknown concepts and observations<br>
-
-Original hopfield paper
-Associative memory networks
+Community structures
+Auto-associative memory networks
 Subgoal finding in RL
 Local and global inhibitory circuits
+Kronecker delta
+Relationship between LAM and Laplacian
 
 ++ Questions?<br>
