@@ -21,16 +21,16 @@ Abstract: *An extended attractor network model for graph-based hierarchical comp
 Attractor dynamics of recurrent neural circuits offer a biologically plausiable for hierarchical segmentation.
 Relationship between attrator networks and the graph-theoretic processing of knowledge structures.
 
-- Chunking of items; increasing no. of items retained in limited capacity of working memory
+- Chunking of items; increasing the no. of items retained in the limited capacity of working memory
 - Segmentation of words; learning and comprehension of language
 - Temporal abstraction of repeated sequences; accelerates reinforcement learning
 
-++ What is the neurological representation?
+++ What is the neurological representation?<br>
 
-++ Build
+++ Build<br>
 Datasets
 Hopfield RNN
 
-++ Unknown concepts
+++ Unknown concepts<br>
 
-++ Questions?
+++ Questions?<br>
