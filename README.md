@@ -38,6 +38,10 @@ Relationship between attrator networks and the graph-theoretic processing of kno
 - Asymmetrical links generate chunked sequential activities in the hippocampus
 
 ### Research questions?
+- How strong is the relationship between hebbian learning, state attractors and sequential segmentation with the hippocampus?
+- How can this technique be improved?
+- Alternate abstraction
+- CG application (Segmentation / ...)
 
 ### Build
 - Datasets
@@ -71,3 +75,5 @@ Relationship between LAM and Laplacian |
 Pattern overlap | 
 Cell assembilies | 
 Abstract excitatory and inhibitatory activity | 
+Entorhinal grid cells |
+Assembly specific inhibition |
