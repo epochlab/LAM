@@ -30,8 +30,8 @@ Graph-based segmentation and abstraction.
 ++ What is the neurological representation?<br>
 
 ++ Build
-- Datasets
-- Hopfield RNN
+- Datasets [3]: Repeat graph, karate club network and the structure compartmentalised rooms
+- Hopfield RNN - Hebbian learning (Spike-timing-dependant plasticity), pattern completion and attractor states.
 
 Feature | Notes
 ------- | -------
