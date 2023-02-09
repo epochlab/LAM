@@ -56,13 +56,15 @@ Relationship between attrator networks and the graph-theoretic processing of kno
     - Unsupervised learning?
 
 ### Unknown concepts and observations
-- State-transition
-- Community structures
-- Association memory networks (Auto & Hetero)
-- Subgoal finding in RL
-- Local and global inhibitory circuits
-- Kronecker delta
-- Relationship between LAM and Laplacian
-- Pattern overlap
-- Cell assembilies
-- Abstract excitatory and inhibitatory activity
+Feature | Notes
+------- | -------
+State-transition | 
+Community structures | 
+Association memory networks (Auto & Hetero) | 
+Subgoal finding in RL | 
+Local and global inhibitory circuits | 
+Kronecker delta |
+Relationship between LAM and Laplacian | 
+Pattern overlap | 
+Cell assembilies | 
+Abstract excitatory and inhibitatory activity | 
