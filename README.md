@@ -31,6 +31,6 @@ Relationship between attrator networks and the graph-theoretic processing of kno
 Datasets
 Hopfield RNN
 
-++ Unknown concepts<br>
+++ Unknown concepts and observations<br>
 
 ++ Questions?<br>
