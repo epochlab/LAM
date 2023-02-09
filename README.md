@@ -55,8 +55,7 @@ Relationship between attrator networks and the graph-theoretic processing of kno
 - Laplacian eigenvectors 
     - Unsupervised learning?
 
-### Unknown concepts and observations
-Feature | Notes
+? | Notes
 ------- | -------
 State-transition | 
 Community structures | 
