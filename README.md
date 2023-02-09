@@ -33,10 +33,10 @@ Graph-based segmentation and abstraction.
 Datasets
 Hopfield RNN
 
-Title | Notes
+Feature | Notes
 ------- | -------
-Arbitary symmetrical graphs | Generalise the one-dimensional sequential structure of temporal associations of the conventional model. (Hopfield?)
-Negative associated weights | Assembly specific inhibition.
+Arbitary symmetrical graphs | Generalise the one-dimensional sequential structure of temporal associations of the conventional model (Hopfield?)
+Negative associated weights | Assembly specific inhibition
 
 ++ Unknown concepts and observations<br>
 
