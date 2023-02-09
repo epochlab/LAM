@@ -35,7 +35,6 @@ Hopfield RNN
 
 Title | Notes
 ------- | -------
-
 Arbitary symmetrical graphs | Generalise the one-dimensional sequential structure of temporal associations of the conventional model. (Hopfield?)
 Negative associated weights | Assembly specific inhibition.
 
