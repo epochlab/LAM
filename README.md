@@ -38,11 +38,6 @@ Relationship between attrator networks and the graph-theoretic processing of kno
 - Asymmetrical links generate chunked sequential activities in the hippocampus
 
 ++ Build
-Feature | Notes
-------- | -------
-Arbitary symmetrical graphs | Generalise the one-dimensional sequential structure of temporal associations of the conventional hopfield model
-Negative associated weights | Assembly specific inhibition
-
 - Datasets
     - Original graph
     - Karate club network
@@ -52,6 +47,9 @@ Negative associated weights | Assembly specific inhibition
     - Hebbian learning (spike-timing-dependant plasticity)
     - Pattern completion
     - Attractor states
+- Key features
+    - Arbitary symmetrical graphs; generalise the one-dimensional sequential structure of temporal associations of the conventional hopfield model
+    - Negative associated weights; Assembly specific inhibition
 - LAM network with hetero-associative weights
     - Adjacency graph matrices 
 - Laplacian eigenvectors 
