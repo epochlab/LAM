@@ -13,4 +13,6 @@ Abstract: *An extended attractor network model for graph-based hierarchical comp
 
 [Original Paper, 2021](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC8412329/pdf/pcbi.1009296.pdf)
 
-WORK-IN-PROGRESS
+--------------------------------------------------------------------
+
+## WORK-IN-PROGRESS
