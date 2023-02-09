@@ -31,6 +31,11 @@ Relationship between attrator networks and the graph-theoretic processing of kno
 Datasets
 Hopfield RNN
 
+Graph-based segmentation and abstraction.
+
+Arbitary symmetrical graphs, to generalise the one-dimensional sequential structure of temporal associations of the conventional model. (Hopfield?)<br>
+Negative associated weights, assembly specific inhibition
+
 ++ Unknown concepts and observations<br>
 
 ++ Questions?<br>
