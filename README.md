@@ -65,10 +65,10 @@ Relationship between attrator networks and the graph-theoretic processing of kno
 
 ? | Notes
 ------- | -------
-State-transition | 
-Community structures | 
+State-transition graphs | 
+Community structures (Clusters) | 
 Association memory networks (Auto & Hetero) | 
-Subgoal finding in RL | 
+Sub-goal finding in RL | 
 Local and global inhibitory circuits | 
 Kronecker delta | 
 Relationship between LAM and Laplacian | 
