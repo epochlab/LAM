@@ -21,6 +21,8 @@ Abstract: *An extended attractor network model for graph-based hierarchical comp
 Attractor dynamics of recurrent neural circuits offer a biologically plausiable for hierarchical segmentation.
 Relationship between attrator networks and the graph-theoretic processing of knowledge structures.
 
+Graph-based segmentation and abstraction.
+
 - Chunking of items; increasing the no. of items retained in the limited capacity of working memory
 - Segmentation of words; learning and comprehension of language
 - Temporal abstraction of repeated sequences; accelerates reinforcement learning
@@ -31,10 +33,11 @@ Relationship between attrator networks and the graph-theoretic processing of kno
 Datasets
 Hopfield RNN
 
-Graph-based segmentation and abstraction.
+Title | Notes
+------- | -------
 
-Arbitary symmetrical graphs, to generalise the one-dimensional sequential structure of temporal associations of the conventional model. (Hopfield?)<br>
-Negative associated weights, assembly specific inhibition
+Arbitary symmetrical graphs | Generalise the one-dimensional sequential structure of temporal associations of the conventional model. (Hopfield?)
+Negative associated weights | Assembly specific inhibition.
 
 ++ Unknown concepts and observations<br>
 
