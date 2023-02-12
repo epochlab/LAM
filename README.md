@@ -11,7 +11,7 @@
 #### Laplacian Associative Memory (LAM)
 Abstract: *An extended attractor network model for graph-based hierarchical computation, generating multiscale representations for communities (clusters) of associative links between memory items, and the scale is regulated by the heterogenous modulation of inhibitory circuits.*
 
-[Neural Networks and Physical Systems with Emergent Collective Computational Abilities (1982)](https://www.researchgate.net/publication/16246447_Neural_Networks_and_Physical_Systems_with_Emergent_Collective_Computational_Abilities)<br>
+[Neural networks and physical systems with emergent collective computational abilities (1982)](https://www.researchgate.net/publication/16246447_Neural_Networks_and_Physical_Systems_with_Emergent_Collective_Computational_Abilities)<br>
 [Multiscale representations of community structures in attractor neural networks (2021)](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC8412329/pdf/pcbi.1009296.pdf)
 
 --------------------------------------------------------------------
