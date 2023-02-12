@@ -14,8 +14,6 @@ Abstract: *An extended attractor network model for graph-based hierarchical comp
 [Neural networks and physical systems with emergent collective computational abilities (1982)](https://www.researchgate.net/publication/16246447_Neural_Networks_and_Physical_Systems_with_Emergent_Collective_Computational_Abilities)<br>
 [Multiscale representations of community structures in attractor neural networks (2021)](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC8412329/pdf/pcbi.1009296.pdf)
 
---------------------------------------------------------------------
-
 ## WORK-IN-PROGRESS
 
 ### Concept
