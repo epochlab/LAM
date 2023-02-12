@@ -66,13 +66,13 @@ Relationship between attrator networks and the graph-theoretic processing of kno
     - Activation threshold
 
 ### Notes
-Single layer of weights holds three memories with the final memory not retrievable.
-Does it require hidden layers to be efficient or is that just a Boltzmann machine?
-Is LAM just a Hopfield network with arbitary symmetrical graphs and negative associated weights?
-Make probabilistic (Boltzmann)
-Resolve value inversion
+Single layer of weights holds three memories with the final memory not retrievable.<br>
+Does it require hidden layers to be efficient or is that just a Boltzmann machine?<br>
+Is LAM just a Hopfield network with arbitary symmetrical graphs and negative associated weights?<br>
+Make probabilistic (Boltzmann)<br>
+Resolve value inversion<br>
 
-Holiday dates (Sept) - Final submission & resits
+- Holiday dates (Sept) - Final submission & resits
 
 --------------------------------------------------------------------
 
