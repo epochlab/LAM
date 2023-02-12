@@ -17,10 +17,7 @@ Abstract: *An extended attractor network model for graph-based hierarchical comp
 ## WORK-IN-PROGRESS
 
 ### Concept
-Graph-based segmentation and abstraction.
-
-Attractor dynamics of recurrent neural circuits offer a biologically plausiable for hierarchical segmentation.
-Relationship between attrator networks and the graph-theoretic processing of knowledge structures.
+Graph-based segmentation and clustering. LAM is an artificial neural network architecture that uses a Laplacian matrix as the underlying memory structure offering a biological abstraction of hierarchical segmentation.
 
 - Chunking of items
     - Increasing the number of items retained in the limited capacity of working memory
