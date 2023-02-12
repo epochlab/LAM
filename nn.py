@@ -31,10 +31,10 @@ class hopfield():
     def step(self, y): # Step / Threshold activation function
         return 1 if y > 0 else -1
 
-    def sigmoid(self, x): # Contiuous activation function
+    def sigmoid(self, x): # Continuous activation function
         return 1.0 / (1.0 + np.exp(-x))
 
-    def bernoulli(self, prob): # Bernoulli sampling
+    def bernoulli(self, prob): # Bernoulli distribution
         return 1 if np.random.uniform(0, 1) < prob else -1
 
     def compute_energy(self, state): # As per original paper
