@@ -34,8 +34,8 @@ class hopfield():
     def sigmoid(self, x): # Contiuous activation function
         return 1.0 / (1.0 + np.exp(-x))
 
-    def bernoulli(self, prob):
-        return 1 if np.random.uniform(0, 1) < prob else -1 # Bernoulli sampling
+    def bernoulli(self, prob): # Bernoulli sampling
+        return 1 if np.random.uniform(0, 1) < prob else -1
 
     def compute_energy(self, state): # As per original paper
         return -0.5 * np.dot(np.dot(self.weights, state), state.T)
