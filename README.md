@@ -63,11 +63,12 @@ Relationship between attrator networks and the graph-theoretic processing of kno
     - Inference noise
     - Activation threshold
 
-### Notes
 - Single layer of weights holds three memories with the final memory not retrievable.
 - Does it require hidden layers to be efficient or is that just a Boltzmann machine?
 - Is LAM just a Hopfield network with arbitary symmetrical graphs and negative associated weights?
 - Resolve value inversion
+
+### Q&A
 
 ? | Notes
 ------- | -------
