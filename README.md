@@ -68,6 +68,8 @@ Relationship between attrator networks and the graph-theoretic processing of kno
 - Is LAM just a Hopfield network with arbitary symmetrical graphs and negative associated weights?
 - Resolve value inversion
 
+- Holiday dates (Sept) - Final submission & resits
+
 ### Q&A
 ? | Notes
 ------- | -------
@@ -83,5 +85,3 @@ Cell assembilies |
 Abstract excitatory and inhibitatory activity |
 Entorhinal grid cells |
 Assembly specific inhibition |
-
-- Holiday dates (Sept) - Final submission & resits
