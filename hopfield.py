@@ -20,18 +20,21 @@ class hopfield():
             rand_idx = np.random.randint(1, self.ndim)
             spin = np.dot(self.weights[rand_idx,:], state) # Activation function
 
-            # state[rand_idx] = self.step(spin) # Output function
-
+            # state[rand_idx] = self.step(spin)
+            
             prob = self.sigmoid(spin)
-            state[rand_idx] = 1 if np.random.uniform(0, 1) < prob else -1 # Bernoulli sampling
+            state[rand_idx] = self.bernoulli(prob)
 
         return state
 
-    def step(self, y):
+    def step(self, y): # Threshold activation function
         return 1 if y > 0 else -1
 
-    def sigmoid(self, x): # Contiuous activation
+    def sigmoid(self, x): # Contiuous activation function
         return 1.0 / (1.0 + np.exp(-x))
+
+    def bernoulli(self, prob):
+        return 1 if np.random.uniform(0, 1) < prob else -1 # Bernoulli sampling
 
     def compute_energy(self, state): # As per original paper
         return -0.5 * np.dot(np.dot(self.weights, state), state.T)
