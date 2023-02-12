@@ -8,7 +8,7 @@ class hopfield():
         self.weights = np.zeros((self.ndim, self.ndim))
 
     def train(self, data, threshold=0.1):
-        for _, sample in enumerate(data):
+        for sample in data:
             memory = np.array([np.where(sample > threshold, 1, -1)]) # Binary dipole (+/-)
             delta_weights = memory.T * memory
             self.weights += delta_weights
