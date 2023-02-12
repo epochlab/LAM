@@ -42,7 +42,7 @@ Graph-based segmentation and clustering. LAM is an artificial neural network arc
     - Original graph
     - Karate club network
     - The structure of compartmentalised rooms
-    - Image-based, RL & robotic? (NEW)
+    - Image-based, RL & robotic?
 - Hopfield RNN
     - Hebbian learning (spike-timing-dependant plasticity)
     - Pattern completion
@@ -55,15 +55,9 @@ Graph-based segmentation and clustering. LAM is an artificial neural network arc
 - Laplacian eigenvectors 
     - Unsupervised learning?
 
-- To-Do:
-    - Simulated annealing
-    - Inference noise
-    - Activation threshold
-
-- Single layer of weights holds three memories with the final memory not retrievable.
+- Single layer of weights holds three memories with the final memory not retrievable - Does noise & annealing reduce local minima
 - Does it require hidden layers to be efficient or is that just a Boltzmann machine?
 - Is LAM just a Hopfield network with arbitary symmetrical graphs and negative associated weights?
-- Resolve value inversion
 
 - Holiday dates (Sept) - Final submission & resits
 

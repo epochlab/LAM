@@ -16,14 +16,14 @@ class hopfield():
         self.weights /= data.shape[0] # Normalise against dataset
         np.fill_diagonal(self.weights, 0) # Set the diagonal to zero - ensure nodes to influence themselves
 
-    def infer(self, state, units):
+    def infer(self, state, units, T):
         for _ in range(units):
             rand_idx = np.random.randint(1, self.ndim)
             spin = np.dot(self.weights[rand_idx,:], state) # Activation function
 
             # state[rand_idx] = self.step(spin)
 
-            prob = self.sigmoid(spin)
+            prob = self.sigmoid(spin / T)
             state[rand_idx] = self.bernoulli(prob)
 
         return state
