@@ -7,13 +7,14 @@ class hopfield():
         self.ndim = ndim
         self.weights = np.zeros((self.ndim, self.ndim))
 
-    def train(self, data, threshold=0.1):
+    def hopfield(self, data, threshold=0.1):
         for _, sample in enumerate(data):
-            memory = np.array([np.where(sample > threshold, 1, -1)]) # Binary dipole
+            memory = np.array([np.where(sample > threshold, 1, -1)]) # Binary dipole (+/-)
             delta_weights = memory.T * memory
             self.weights += delta_weights
-            # np.fill_diagonal(self.weights, 0) # Symmetrical weights
+            self.weights = (self.weights + self.weights.T) / 2 # Enforce symmetrical weights
         self.weights /= data.shape[0] # Normalise against dataset
+        np.fill_diagonal(self.weights, 0) # Set the diagonal to zero - ensure nodes to influence themselves
 
     def infer(self, state, units):
         for _ in range(units):
@@ -21,13 +22,13 @@ class hopfield():
             spin = np.dot(self.weights[rand_idx,:], state) # Activation function
 
             # state[rand_idx] = self.step(spin)
-            
+
             prob = self.sigmoid(spin)
             state[rand_idx] = self.bernoulli(prob)
 
         return state
 
-    def step(self, y): # Threshold activation function
+    def step(self, y): # Step / Threshold activation function
         return 1 if y > 0 else -1
 
     def sigmoid(self, x): # Contiuous activation function
