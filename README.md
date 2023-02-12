@@ -69,7 +69,6 @@ Relationship between attrator networks and the graph-theoretic processing of kno
 - Resolve value inversion
 
 ### Q&A
-
 ? | Notes
 ------- | -------
 State-transition graphs |
