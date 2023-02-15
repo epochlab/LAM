@@ -39,3 +39,18 @@ class hopfield():
 
     def compute_energy(self, state): # As per original paper
         return -0.5 * np.dot(np.dot(self.weights, state), state.T)
+
+class elman():
+    def __init__(self, input_size, hidden_size, output_size):
+        self.input_size = input_size
+        self.hidden_size = hidden_size
+        self.output_size = output_size
+
+        # Init weights
+        self. w_ih = np.random.randn(input_size, hidden_size)
+        self. w_hh = np.random.randn(hidden_size, hidden_size)
+        self. w_ho = np.random.randn(hidden_size, output_size)
+
+        # Init bias
+        self.b_h = np.zeros(hidden_size)
+        self.b_o = np.zeros(hidden_size)
