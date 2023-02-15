@@ -59,7 +59,7 @@ Graph-based segmentation and clustering. LAM is an artificial neural network arc
 - Does it require hidden layers to be efficient or is that just a Boltzmann machine?
 - Is LAM just a Hopfield network with arbitary symmetrical graphs and negative associated weights?
 
-- Holiday dates (Sept) - Final submission & resits
+- Testing & SSIM
 
 ### Q&A
 ? | Notes
