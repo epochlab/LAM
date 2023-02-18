@@ -1,6 +1,9 @@
 #!/usr/bin/env python3
 
-def alphabet():
+def lookup_value(input, dict):
+    return [v for k, v in dict.items() if input in k]
+
+def token():
     dict = {
         'a': '00001',
         'b': '00010',
