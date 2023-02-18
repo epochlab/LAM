@@ -31,7 +31,7 @@ Abstract: *An extended network model for graph-based hierarchical computation, g
 
 ### To-Do
 - Datasets
-    - Original source
+    - Original source (Repeatition problem)
     - Karate club network
     - The structure of compartmentalised rooms
     - Images, Language & RL?
@@ -44,8 +44,8 @@ Abstract: *An extended network model for graph-based hierarchical computation, g
     - Attractor states
     - Pattern completion
 - LAM
-    - Arbitary symmetrical graphs; generalise the one-dimensional sequential structure of temporal associations of the conventional hopfield model
-    - Negative associated weights; assembly specific inhibition
+    - Arbitary symmetrical graphs
+    - Negative associated weights
 - Benchmark
     - SSIM
     - Dimensional clustering
@@ -54,21 +54,22 @@ Abstract: *An extended network model for graph-based hierarchical computation, g
 ? | Notes
 ------- | -------
 State-transition graphs | A set of states, a set of events or inputs that can trigger transitions between states, and a set of transitions that describe how the system operates from one state to another in response to events or inputs.
-Community structures (Clusters) |  Patterns that are similar to each other are grouped together into the same community, while patterns that are dissimilar from each other are grouped into different communities.
-Association memory weights (Auto & Hetero) |
+Community structures (Clusters) | Patterns that are similar to each other are grouped together into the same community, while patterns that are dissimilar from each other are grouped into different communities.
+Auto-association weights |  Weights that connect a neuron to itself; used to complete or recover the missing or corrupted parts of the pattern.
+Hetero-association weights | weights that connect two different neurons; when a new pattern is presented to the network, hetero-associative weights retrieve the stored pattern most similar to the input pattern.
 Local and global inhibitory circuits |
 Pattern overlap |
 Cell assembilies |
 Abstract excitatory and inhibitatory activity |
-Assembly specific inhibition |
-Entorhinal grid cells |
+Assembly specific inhibition | Negative associated weights are weights in a neural network that represent inhibitory connections between neurons; where neurons compete with each other to become active.
+Entorhinal grid cells | Spatial navigation and memory; each grid cell has a unique firing pattern, with multiple peaks of activity that form a hexagonal grid pattern.
 Relationship between LAM and Laplacian |
-Laplacian eigenvectors |
 Adjacency graph matrices | A square matrix that represents a graph. The rows and columns of the matrix correspond to the vertices of the graph, and the entries of the matrix indicate whether there is an edge between two vertices.
+Laplacian eigenvectors | A square matrix constructed from the adjacency matrix; which encodes the relationships between the vertices. The Laplacian matrix is a useful tool to study various properties of graphs, such as connectivity and community structure.
 Sub-goal finding in RL | Identifying intermediate goals or sub-goals that can help an agent achieve its ultimate objective more efficiently.
 Kronecker delta | A mathematical function that takes two indices [i] and [j] and returns 1 if they are equal and 0 otherwise.
 
-### Papers:
+### References:
 
 [Neural networks and physical systems with emergent collective computational abilities](https://www.researchgate.net/publication/16246447_Neural_Networks_and_Physical_Systems_with_Emergent_Collective_Computational_Abilities) (1982)<br>
 [Learning internal representations by error propagation](https://apps.dtic.mil/dtic/tr/fulltext/u2/a164453.pdf) (1985)<br>
