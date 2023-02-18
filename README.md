@@ -20,7 +20,7 @@ Abstract: *An extended network model for graph-based hierarchical computation, g
 - Temporal abstraction of repeated sequences
     - Accelerate reinforcement learning
 
-### What is the neurological representation?
+### :brain: What is the neurological representation?
 - Having experienced a seqence of events, the brain, learns the temporal associations between the successive events and captures the structure of a state-transition graph
 - Event segmentation performed by humans reflects community structures (clusters)
 - Characteristics of place cells and entorhinal grid cells
