@@ -26,10 +26,10 @@ Abstract: *An extended network model for graph-based hierarchical computation, g
 - Characteristics of place cells and entorhinal grid cells
 - Asymmetrical links generate chunked sequential activities in the hippocampus
 
-### Research questions?
+### :test_tube: Research questions?
 - How strong is the relationship between hebbian learning, state attractors and sequential segmentation with the hippocampus?
 
-### Build
+### :wrench: Build
 - Datasets
     - Original source
     - Karate club network
@@ -50,7 +50,7 @@ Abstract: *An extended network model for graph-based hierarchical computation, g
     - SSIM
     - Dimensional clustering
 
-### Q&A
+### :question: Q&A
 ? | Notes
 ------- | -------
 State-transition graphs |
@@ -68,7 +68,7 @@ Adjacency graph matrices |
 Sub-goal finding in RL |
 Kronecker delta |
 
-### Papers:
+### :triangular_ruler: Papers:
 
 [Neural networks and physical systems with emergent collective computational abilities](https://www.researchgate.net/publication/16246447_Neural_Networks_and_Physical_Systems_with_Emergent_Collective_Computational_Abilities) (1982)<br>
 [Learning internal representations by error propagation](https://apps.dtic.mil/dtic/tr/fulltext/u2/a164453.pdf) (1985)<br>
