@@ -29,7 +29,7 @@ Abstract: *An extended network model for graph-based hierarchical computation, g
 ### Research questions
 - How strong is the relationship between hebbian learning, state attractors and sequential segmentation with the hippocampus?
 
-### Build
+### To-Do
 - Datasets
     - Original source
     - Karate club network
@@ -53,8 +53,8 @@ Abstract: *An extended network model for graph-based hierarchical computation, g
 ### Q&A
 ? | Notes
 ------- | -------
-State-transition graphs |
-Community structures (Clusters) |
+State-transition graphs | A set of states, a set of events or inputs that can trigger transitions between states, and a set of transitions that describe how the system operates from one state to another in response to events or inputs.
+Community structures (Clusters) |  Patterns that are similar to each other are grouped together into the same community, while patterns that are dissimilar from each other are grouped into different communities.
 Association memory weights (Auto & Hetero) |
 Local and global inhibitory circuits |
 Pattern overlap |
@@ -64,9 +64,9 @@ Assembly specific inhibition |
 Entorhinal grid cells |
 Relationship between LAM and Laplacian |
 Laplacian eigenvectors |
-Adjacency graph matrices |
-Sub-goal finding in RL |
-Kronecker delta |
+Adjacency graph matrices | A square matrix that represents a graph. The rows and columns of the matrix correspond to the vertices of the graph, and the entries of the matrix indicate whether there is an edge between two vertices.
+Sub-goal finding in RL | Identifying intermediate goals or sub-goals that can help an agent achieve its ultimate objective more efficiently.
+Kronecker delta | A mathematical function that takes two indices [i] and [j] and returns 1 if they are equal and 0 otherwise.
 
 ### Papers:
 
