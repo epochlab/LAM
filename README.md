@@ -1,8 +1,6 @@
 # PSY6431
 
-**Project ID:**  Tl44vh6a
-
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+**Project ID:**  Tl44vh6a [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
 <p align="center">
   <img src="https://github.com/epochlab/LAM/blob/main/sample.png">
