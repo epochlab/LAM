@@ -8,12 +8,14 @@
 
 --------------------------------------------------------------------
 
-#### Community structure of associative memory encoding (LAM) - WORK-IN-PROGRESS
+## WORK-IN-PROGRESS
+
+#### Community structure of associative memory encoding (LAM)
 Abstract: *An extended network model for graph-based hierarchical computation, generating communities (clusters) of associative links between memory items, with scale regulated by the heterogenous modulation of inhibitory circuits.*
 
 ### Concept
 
-- Chunking of items
+- Chunking / clustering of items
     - Increasing the number of items retained in the limited capacity of working memory
 - Segmentation of images & words
     - Learning and comprehension of scenes/language
@@ -28,7 +30,6 @@ Abstract: *An extended network model for graph-based hierarchical computation, g
 
 ### Research questions?
 - How strong is the relationship between hebbian learning, state attractors and sequential segmentation with the hippocampus?
-
 
 ### Build
 - Datasets
