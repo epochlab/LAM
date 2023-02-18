@@ -11,13 +11,7 @@
 #### Community structure of associative memory encoding (LAM) - WORK-IN-PROGRESS
 Abstract: *An extended network model for graph-based hierarchical computation, generating communities (clusters) of associative links between memory items, with scale regulated by the heterogenous modulation of inhibitory circuits.*
 
-[Multiscale representations of community structures in attractor neural networks](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC8412329/pdf/pcbi.1009296.pdf) (2021)
-
-- Arbitary symmetrical graphs; generalise the one-dimensional sequential structure of temporal associations of the conventional hopfield model
-- Negative associated weights; assembly specific inhibition
-
 ### Concept
-Graph-based segmentation and clustering;
 
 - Chunking of items
     - Increasing the number of items retained in the limited capacity of working memory
@@ -25,6 +19,11 @@ Graph-based segmentation and clustering;
     - Learning and comprehension of scenes/language
 - Temporal abstraction of repeated sequences
     - Accelerate reinforcement learning
+
+[Multiscale representations of community structures in attractor neural networks](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC8412329/pdf/pcbi.1009296.pdf) (2021)
+
+- Arbitary symmetrical graphs; generalise the one-dimensional sequential structure of temporal associations of the conventional hopfield model
+- Negative associated weights; assembly specific inhibition
 
 ### What is the neurological representation?
 - Having experienced a seqence of events, the brain, learns the temporal associations between the successive events and captures the structure of a state-transition graph
@@ -43,12 +42,11 @@ Graph-based segmentation and clustering;
     - The structure of compartmentalised rooms
     - Images, Language & RL?
 - Networks
-    - RNN
-    - Hopfield (Hebbian Learning)
     - LAM
     - Boltzmann Machine
     - GRU, LSTM & Transformer
 - Key features
+    - Clustering
     - Attractor states
     - Pattern completion
 - Benchmark
@@ -61,18 +59,21 @@ Graph-based segmentation and clustering;
 State-transition graphs |
 Community structures (Clusters) |
 Association memory weights (Auto & Hetero) |
-Adjacency graph matrices |
-Sub-goal finding in RL |
 Local and global inhibitory circuits |
-Kronecker delta |
-Relationship between LAM and Laplacian |
 Pattern overlap |
 Cell assembilies |
 Abstract excitatory and inhibitatory activity |
-Entorhinal grid cells |
 Assembly specific inhibition |
+Entorhinal grid cells |
+Relationship between LAM and Laplacian |
 Laplacian eigenvectors |
+Adjacency graph matrices |
+Sub-goal finding in RL |
+Kronecker delta |
 
 ### Papers:
 
 [Neural networks and physical systems with emergent collective computational abilities](https://www.researchgate.net/publication/16246447_Neural_Networks_and_Physical_Systems_with_Emergent_Collective_Computational_Abilities) (1982)<br>
+[Learning internal representations by error propagation](https://apps.dtic.mil/dtic/tr/fulltext/u2/a164453.pdf) (1985)
+[Finding structure in time](http://psych.colorado.edu/~kimlab/Elman1990.pdf) (1990)<br>
+[A neural probabilistic language model](https://www.jmlr.org/papers/volume3/bengio03a/bengio03a.pdf) (2003)
