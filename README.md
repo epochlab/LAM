@@ -1,4 +1,4 @@
-# PSY6431 - WORK-IN-PROGRESS
+# PSY6431
 
 **Project ID:**  Tl44vh6a
 
@@ -8,7 +8,7 @@
 
 --------------------------------------------------------------------
 
-#### Community structure of associative memory encoding (LAM)
+#### Community structure of associative memory encoding
 Abstract: *An extended network model for graph-based hierarchical computation, generating communities (clusters) of associative links between memory items, with scale regulated by the heterogenous modulation of inhibitory circuits.*
 
 ### Concept
