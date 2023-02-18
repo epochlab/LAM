@@ -8,28 +8,28 @@
 
 --------------------------------------------------------------------
 
-#### Community structure of associative memory encoding
+#### Community structures of associative memory encoding
 Abstract: *An extended network model for graph-based hierarchical computation, generating communities (clusters) of associative links between memory items, with scale regulated by the heterogenous modulation of inhibitory circuits.*
 
-### Concept :cloud:
+### Concept
 
-- Chunking / clustering of items
+- Chunking and clustering of items
     - Increasing the number of items retained in the limited capacity of working memory
 - Segmentation of images & words
     - Learning and comprehension of scenes/language
 - Temporal abstraction of repeated sequences
     - Accelerate reinforcement learning
 
-### What is the neurological representation? :brain:
+### What is the neurological representation?
 - Having experienced a seqence of events, the brain, learns the temporal associations between the successive events and captures the structure of a state-transition graph
 - Event segmentation performed by humans reflects community structures (clusters)
 - Characteristics of place cells and entorhinal grid cells
 - Asymmetrical links generate chunked sequential activities in the hippocampus
 
-### :test_tube: Research questions?
+### Research questions
 - How strong is the relationship between hebbian learning, state attractors and sequential segmentation with the hippocampus?
 
-### Build :wrench:
+### Build
 - Datasets
     - Original source
     - Karate club network
@@ -50,7 +50,7 @@ Abstract: *An extended network model for graph-based hierarchical computation, g
     - SSIM
     - Dimensional clustering
 
-### Q&A :question:
+### Q&A
 ? | Notes
 ------- | -------
 State-transition graphs |
@@ -68,7 +68,7 @@ Adjacency graph matrices |
 Sub-goal finding in RL |
 Kronecker delta |
 
-### Papers: :triangular_ruler:
+### Papers:
 
 [Neural networks and physical systems with emergent collective computational abilities](https://www.researchgate.net/publication/16246447_Neural_Networks_and_Physical_Systems_with_Emergent_Collective_Computational_Abilities) (1982)<br>
 [Learning internal representations by error propagation](https://apps.dtic.mil/dtic/tr/fulltext/u2/a164453.pdf) (1985)<br>
