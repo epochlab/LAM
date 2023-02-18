@@ -1,6 +1,6 @@
 # PSY6431
 
-**Project ID:**  Tl44vh6a [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+**Project ID:**  Tl44vh6a
 
 <p align="center">
   <img src="https://github.com/epochlab/LAM/blob/main/sample.png">
@@ -11,7 +11,7 @@
 #### Community structure of associative memory encoding
 Abstract: *An extended network model for graph-based hierarchical computation, generating communities (clusters) of associative links between memory items, with scale regulated by the heterogenous modulation of inhibitory circuits.*
 
-### Concept
+### Concept :cloud:
 
 - Chunking / clustering of items
     - Increasing the number of items retained in the limited capacity of working memory
