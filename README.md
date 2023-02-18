@@ -11,7 +11,7 @@
 #### Community structure of associative memory encoding
 Abstract: *An extended network model for graph-based hierarchical computation, generating communities (clusters) of associative links between memory items, with scale regulated by the heterogenous modulation of inhibitory circuits.*
 
-### :cloud: Concept
+### Concept :cloud:
 
 - Chunking / clustering of items
     - Increasing the number of items retained in the limited capacity of working memory
@@ -20,7 +20,7 @@ Abstract: *An extended network model for graph-based hierarchical computation, g
 - Temporal abstraction of repeated sequences
     - Accelerate reinforcement learning
 
-### :brain: What is the neurological representation?
+### What is the neurological representation? :brain:
 - Having experienced a seqence of events, the brain, learns the temporal associations between the successive events and captures the structure of a state-transition graph
 - Event segmentation performed by humans reflects community structures (clusters)
 - Characteristics of place cells and entorhinal grid cells
@@ -29,7 +29,7 @@ Abstract: *An extended network model for graph-based hierarchical computation, g
 ### :test_tube: Research questions?
 - How strong is the relationship between hebbian learning, state attractors and sequential segmentation with the hippocampus?
 
-### :wrench: Build
+### Build :wrench:
 - Datasets
     - Original source
     - Karate club network
@@ -50,7 +50,7 @@ Abstract: *An extended network model for graph-based hierarchical computation, g
     - SSIM
     - Dimensional clustering
 
-### :question: Q&A
+### Q&A :question:
 ? | Notes
 ------- | -------
 State-transition graphs |
@@ -68,7 +68,7 @@ Adjacency graph matrices |
 Sub-goal finding in RL |
 Kronecker delta |
 
-### :triangular_ruler: Papers:
+### Papers: :triangular_ruler:
 
 [Neural networks and physical systems with emergent collective computational abilities](https://www.researchgate.net/publication/16246447_Neural_Networks_and_Physical_Systems_with_Emergent_Collective_Computational_Abilities) (1982)<br>
 [Learning internal representations by error propagation](https://apps.dtic.mil/dtic/tr/fulltext/u2/a164453.pdf) (1985)<br>
