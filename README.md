@@ -48,8 +48,8 @@ Abstract: *An extended network model for graph-based hierarchical computation, g
     - Attractor states
     - Pattern completion
 - LAM
-    - Weights (Excitatory, Global inhibition & Local inhibition)
-    - Weight calculation
+    - Weight update rule (Excitatory, Global inhibition & Local inhibition)
+    - Component probability
     - Inference
     - Datasets & Clustering
 - Benchmark
@@ -82,11 +82,14 @@ Sub-goal finding in RL | Identifying intermediate goals or sub-goals that can he
 One-shot learning |
 Reverse querying |
 Hamming distances |
+Undirected edges |
 
 ### References:
 
 [Neural networks and physical systems with emergent collective computational abilities](https://www.researchgate.net/publication/16246447_Neural_Networks_and_Physical_Systems_with_Emergent_Collective_Computational_Abilities) (1982)<br>
 [Learning internal representations by error propagation](https://apps.dtic.mil/dtic/tr/fulltext/u2/a164453.pdf) (1985)<br>
+[Information storage in neural networks with low levels of activity](https://sci-hub.ru/10.1103/PhysRevA.35.2293) (1987)<br>
 [Finding structure in time](http://psych.colorado.edu/~kimlab/Elman1990.pdf) (1990)<br>
 [A neural probabilistic language model](https://www.jmlr.org/papers/volume3/bengio03a/bengio03a.pdf) (2003)<br>
+[Extended Temporal Association Memory by Modulations of Inhibitory Circuits](https://journals.aps.org/prl/pdf/10.1103/PhysRevLett.123.078101) (2019) <br>
 [Multiscale representations of community structures in attractor neural networks](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC8412329/pdf/pcbi.1009296.pdf) (2021)
