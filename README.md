@@ -37,9 +37,11 @@ Abstract: *An extended network model for graph-based hierarchical computation, g
     - Images, Language & RL?
 - Networks
     - LAM
-    - BAM
+    - Continuous deterministic hopfield
+    - BAM > Forgetting memories through hypertuning parameters
     - SDM (Sparse distributed memory)
     - Boltzmann Machine
+    - Deep/Dist Belief Network
     - GRU, LSTM & Transformer
 - Key features
     - Clustering
@@ -53,7 +55,7 @@ Abstract: *An extended network model for graph-based hierarchical computation, g
 - Benchmark
     - SSIM
     - Dimensional clustering
-    - Laplacian Eigenvectors
+    - Laplacian eigenvectors
 
 ### Q&A
 ? | Notes
@@ -71,10 +73,10 @@ Negative associated weights |
 Assembly specific inhibition | Negative associated weights are weights in a neural network that represent inhibitory connections between neurons; where neurons compete with each other to become active.
 [Kronecker delta](https://en.wikipedia.org/wiki/Kronecker_delta) | A mathematical function that takes two indices [i] and [j] and returns 1 if they are equal and 0 otherwise.
 [Entorhinal grid cells](https://en.wikipedia.org/wiki/Grid_cell) | Spatial navigation and memory; each grid cell has a unique firing pattern, with multiple peaks of activity that form a hexagonal grid pattern.
-Local and global inhibitory circuits | 
-Cell assembilies | 
+Local and global inhibitory circuits |
+Cell assembilies |
 Abstract excitatory and inhibitatory activity | 
-Pattern overlap | 
+Pattern overlap |
 Sub-goal finding in RL | Identifying intermediate goals or sub-goals that can help an agent achieve its ultimate objective more efficiently.
 [Kaiming initialization](https://arxiv.org/pdf/1502.01852v1.pdf) | An initialization method accounting for the non-linearity of activation functions, avoid reducing or magnifying the magnitudes of input signals exponentially.
 One-shot learning |
