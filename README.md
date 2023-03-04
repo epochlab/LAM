@@ -46,11 +46,14 @@ Abstract: *An extended network model for graph-based hierarchical computation, g
     - Attractor states
     - Pattern completion
 - LAM
-    - Arbitary symmetrical graphs
-    - Negative associated weights
+    - Weights (Excitatory, Global inhibition & Local inhibition)
+    - Weight calculation
+    - Inference
+    - Datasets & Clustering
 - Benchmark
     - SSIM
     - Dimensional clustering
+    - Laplacian Eigenvectors
 
 ### Q&A
 ? | Notes
@@ -61,7 +64,10 @@ Abstract: *An extended network model for graph-based hierarchical computation, g
 [Hetero-association weights](https://en.wikipedia.org/wiki/Autoassociative_memory) | Weights that connect two different neurons; when a new pattern is presented to the network, hetero-associative weights retrieve the stored pattern most similar to the input pattern.
 [Degree matrix](https://en.wikipedia.org/wiki/Degree_matrix) | A diagonal matrix which contains information about the degree of each vertex, the number of edges attached to each vertex.
 [Adjacency matrix](https://en.wikipedia.org/wiki/Adjacency_matrix) | A square matrix that represents a graph. The rows and columns of the matrix correspond to the vertices of the graph, and the entries of the matrix indicate whether there is an edge between two vertices.
-[Laplacian eigenvectors](https://en.wikipedia.org/wiki/Laplacian_matrix) | A square matrix constructed from the adjacency matrix; which encodes the relationships between the vertices. The Laplacian matrix is a useful tool to study various properties of graphs, such as connectivity and community structure.
+[Laplacian matrix](https://en.wikipedia.org/wiki/Laplacian_matrix) | A square matrix constructed from the adjacency matrix; which encodes the relationships between the vertices. The Laplacian matrix is a useful tool to study various properties of graphs, such as connectivity and community structure.
+Eigenvectors | 
+Arbitary symmetrical graphs |
+Negative associated weights |
 Assembly specific inhibition | Negative associated weights are weights in a neural network that represent inhibitory connections between neurons; where neurons compete with each other to become active.
 [Kronecker delta](https://en.wikipedia.org/wiki/Kronecker_delta) | A mathematical function that takes two indices [i] and [j] and returns 1 if they are equal and 0 otherwise.
 [Entorhinal grid cells](https://en.wikipedia.org/wiki/Grid_cell) | Spatial navigation and memory; each grid cell has a unique firing pattern, with multiple peaks of activity that form a hexagonal grid pattern.
