@@ -84,7 +84,7 @@ Sub-goal finding in RL | Identifying intermediate goals or sub-goals that can he
 [One-shot learning](https://en.wikipedia.org/wiki/One-shot_learning) | A network which aims to classify objects from one, or only a few, examples
 Reverse querying |
 [Hamming distance](https://en.wikipedia.org/wiki/Hamming_distance) |  The minimum number of substitutions required to change one string into the other.
-[Undirected graph](https://en.wikipedia.org/wiki/Graph_(discrete_mathematics) | A set of objects (called vertices or nodes) that are connected together, where all the edges are bidirectional.
+[Undirected graph](https://en.wikipedia.org/wiki/Graph_(discrete_mathematics)) | A set of objects (called vertices or nodes) that are connected together, where all the edges are bidirectional.
 
 ### References:
 
