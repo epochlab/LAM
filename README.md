@@ -91,6 +91,7 @@ Undirected edges |
 [Neural networks and physical systems with emergent collective computational abilities](https://www.researchgate.net/publication/16246447_Neural_Networks_and_Physical_Systems_with_Emergent_Collective_Computational_Abilities) (1982)<br>
 [Learning internal representations by error propagation](https://apps.dtic.mil/dtic/tr/fulltext/u2/a164453.pdf) (1985)<br>
 [Information storage in neural networks with low levels of activity](https://sci-hub.ru/10.1103/PhysRevA.35.2293) (1987)<br>
+[The enhanced storage capacity in neural networks with low activity level](https://sci-hub.ru/10.1209/0295-5075/6/2/002) (1988)<br>
 [Finding structure in time](http://psych.colorado.edu/~kimlab/Elman1990.pdf) (1990)<br>
 [A neural probabilistic language model](https://www.jmlr.org/papers/volume3/bengio03a/bengio03a.pdf) (2003)<br>
 [Extended Temporal Association Memory by Modulations of Inhibitory Circuits](https://journals.aps.org/prl/pdf/10.1103/PhysRevLett.123.078101) (2019) <br>
