@@ -61,7 +61,7 @@ Abstract: *An extended network model for graph-based hierarchical computation, g
 
 ### Q&A
 ? | Notes
-------- | -------
+--------- | -------
 [State-transition graphs](https://en.wikipedia.org/wiki/State_diagram) | A set of states, a set of events or inputs that can trigger transitions between states, and a set of transitions that describe how the system operates from one state to another in response to events or inputs.
 [Community structure](https://en.wikipedia.org/wiki/Community_structure) | Patterns that are similar to each other are grouped together into the same community, while patterns that are dissimilar from each other are grouped into different communities.
 [Auto-association weights](https://en.wikipedia.org/wiki/Autoassociative_memory) |  Weights that connect a neuron to itself; used to complete or recover the missing or corrupted parts of the pattern.
