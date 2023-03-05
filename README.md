@@ -69,7 +69,7 @@ Abstract: *An extended network model for graph-based hierarchical computation, g
 [Degree matrix](https://en.wikipedia.org/wiki/Degree_matrix) | A diagonal matrix which contains information about the degree of each vertex, the number of edges attached to each vertex.
 [Adjacency matrix](https://en.wikipedia.org/wiki/Adjacency_matrix) | A square matrix that represents a graph. The rows and columns of the matrix correspond to the vertices of the graph, and the entries of the matrix indicate whether there is an edge between two vertices.
 [Laplacian matrix](https://en.wikipedia.org/wiki/Laplacian_matrix) | A square matrix constructed from the adjacency matrix; which encodes the relationships between the vertices. The Laplacian matrix is a useful tool to study various properties of graphs, such as connectivity and community structure.
-[https://en.wikipedia.org/wiki/Eigenvalues_and_eigenvectors](Eigen | -values -vectors) | A characteristic vector of a linear transformation is a nonzero vector that changes at most by a scalar factor when that linear transformation is applied to it
+[https://en.wikipedia.org/wiki/Eigenvalues_and_eigenvectors](Eigen) | A characteristic vector of a linear transformation is a nonzero vector that changes at most by a scalar factor when that linear transformation is applied to it.
 Arbitrary symmetrical graphs | 
 [Negative associated weights](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC7116367/) | Auto-association ratio allowing neural inhibition
 Assembly specific inhibition | Negative associated weights are weights in a neural network that represent inhibitory connections between neurons; where neurons compete with each other to become active.
