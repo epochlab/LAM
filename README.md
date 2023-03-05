@@ -69,22 +69,22 @@ Abstract: *An extended network model for graph-based hierarchical computation, g
 [Degree matrix](https://en.wikipedia.org/wiki/Degree_matrix) | A diagonal matrix which contains information about the degree of each vertex, the number of edges attached to each vertex.
 [Adjacency matrix](https://en.wikipedia.org/wiki/Adjacency_matrix) | A square matrix that represents a graph. The rows and columns of the matrix correspond to the vertices of the graph, and the entries of the matrix indicate whether there is an edge between two vertices.
 [Laplacian matrix](https://en.wikipedia.org/wiki/Laplacian_matrix) | A square matrix constructed from the adjacency matrix; which encodes the relationships between the vertices. The Laplacian matrix is a useful tool to study various properties of graphs, such as connectivity and community structure.
-Eigenvectors | 
-Arbitary symmetrical graphs |
-Negative associated weights |
+[https://en.wikipedia.org/wiki/Eigenvalues_and_eigenvectors](Eigen-values & -vectors) | A characteristic vector of a linear transformation is a nonzero vector that changes at most by a scalar factor when that linear transformation is applied to it
+Arbitrary symmetrical graphs | 
+[Negative associated weights](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC7116367/) | Auto-association ratio allowing neural inhibition
 Assembly specific inhibition | Negative associated weights are weights in a neural network that represent inhibitory connections between neurons; where neurons compete with each other to become active.
 [Kronecker delta](https://en.wikipedia.org/wiki/Kronecker_delta) | A mathematical function that takes two indices [i] and [j] and returns 1 if they are equal and 0 otherwise.
 [Entorhinal grid cells](https://en.wikipedia.org/wiki/Grid_cell) | Spatial navigation and memory; each grid cell has a unique firing pattern, with multiple peaks of activity that form a hexagonal grid pattern.
 Local and global inhibitory circuits |
-Cell assembilies |
+[Cell assemblies](http://www.scholarpedia.org/article/Cell_assemblies) | A network of neurons being repeatedly activated causing excitatory synaptic connections among its members are being strengthened.
 Abstract excitatory and inhibitatory activity | 
-Pattern overlap |
+Pattern overlap | 
 Sub-goal finding in RL | Identifying intermediate goals or sub-goals that can help an agent achieve its ultimate objective more efficiently.
 [Kaiming initialization](https://arxiv.org/pdf/1502.01852v1.pdf) | An initialization method accounting for the non-linearity of activation functions, avoid reducing or magnifying the magnitudes of input signals exponentially.
-One-shot learning |
+[One-shot learning](https://en.wikipedia.org/wiki/One-shot_learning) | A network which aims to classify objects from one, or only a few, examples
 Reverse querying |
-Hamming distances |
-Undirected edges |
+[Hamming distance](https://en.wikipedia.org/wiki/Hamming_distance) |  The minimum number of substitutions required to change one string into the other.
+[Undirected graph](https://en.wikipedia.org/wiki/Graph_(discrete_mathematics) | A set of objects (called vertices or nodes) that are connected together, where all the edges are bidirectional.
 
 ### References:
 
