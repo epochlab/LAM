@@ -56,6 +56,8 @@ Abstract: *An extended network model for graph-based hierarchical computation, g
     - SSIM
     - Dimensional clustering
     - Laplacian eigenvectors
+    - Maximum pattern overlap
+    - Number of active patterns
 
 ### Q&A
 ? | Notes
