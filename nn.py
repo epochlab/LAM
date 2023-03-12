@@ -3,9 +3,18 @@
 import numpy as np
 
 class hopfield():
+    """
+    HOPFIELD NETWORK
+    """
     def __init__(self, ndim):
         self.ndim = ndim
         self.weights = np.zeros((self.ndim, self.ndim))
+
+    def _step(self, x):
+        return np.where(x > 0, 1, -1)
+
+    def _compute_energy(self, state):
+        return -0.5 * np.dot(np.dot(self.weights, state), state.T)
 
     def train(self, data):
         for sample in data:
@@ -21,13 +30,10 @@ class hopfield():
         state[idx] = self.step(spin)
         return state
 
-    def step(self, x):
-        return np.where(x > 0, 1, -1)
-
-    def compute_energy(self, state):
-        return -0.5 * np.dot(np.dot(self.weights, state), state.T)
-
 class LAM():
+    """
+    LAPLACIAN ASSOCIATIVE MEMORY (LAM)
+    """
     def __init__(self, N, P, prob, H, gamma, norm_mode):
         self.N = N
         self.P = P
