@@ -20,8 +20,13 @@
 # np.fill_diagonal(self.adjacency, 0) # Set diagonal to 0
 # self.laplacian = self.degree - self.adjacency # Construct laplacian matrix (simple)
 
-# def kronecker_delta(i, j):
-#     return 1 if i==j else 0
+# def step(self, x): # Heaviside step function
+#     return np.where(x > 0, 1, -1)
 
-# def sigmoid(self, x): # Continuous activation function
-#     return 1.0 / (1.0 + np.exp(-x))
+# data = np.random.choice([-1, 1], size=n_dim*n_memory, p=[p, 1-p]) # Binary dipole (+/-) input with sparsity
+
+# w = int((n_dim * (n_dim - 1)) / 2)
+# print(n_dim, \"neurons\")
+# print(w, \"weighted connections\")
+# print(f\"{n_dim * 0.138:.2f} point attactors\")
+# print(f\"{0.24 * w:.2f} bit capacity\")

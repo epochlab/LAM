@@ -74,6 +74,9 @@ class LAM():
     def _set_weight(self, a): # Decompose weights
         self.W = a * self.Wauto + self.Whetero - (a+1) * self.WG
 
+    def _kronecker_delta(i, j):
+        return 1 if i==j else 0
+
     def simulate_single(self, a, eta, epochs, start_node, energycheck=True):
         self._set_weight(a)
         self.x = self.xi[:, start_node] + 0.0
