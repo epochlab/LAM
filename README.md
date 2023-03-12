@@ -12,7 +12,6 @@
 Abstract: *An extended network model for graph-based hierarchical computation, generating communities (clusters) of associative links between memory items, with scale regulated by the heterogenous modulation of inhibitory circuits.*
 
 ### Concept
-
 - Chunking and clustering of items
     - Increasing the number of items retained in the limited capacity of working memory
 - Segmentation of images & words
@@ -48,16 +47,11 @@ Abstract: *An extended network model for graph-based hierarchical computation, g
     - Attractor states
     - Pattern completion
 - LAM
-    - Weight update rule (Excitatory, Global inhibition & Local inhibition)
-    - Component probability
     - Inference
     - Datasets & Clustering
 - Benchmark
     - SSIM
     - Dimensional clustering
-    - Laplacian eigenvectors
-    - Maximum pattern overlap
-    - Number of active patterns
 
 ### Q&A
 ? | Notes
@@ -92,6 +86,6 @@ Reverse querying |
 [The enhanced storage capacity in neural networks with low activity level](https://sci-hub.ru/10.1209/0295-5075/6/2/002) (1988)<br>
 [Finding structure in time](http://psych.colorado.edu/~kimlab/Elman1990.pdf) (1990)<br>
 [A neural probabilistic language model](https://www.jmlr.org/papers/volume3/bengio03a/bengio03a.pdf) (2003)<br>
-[Extended Temporal Association Memory by Modulations of Inhibitory Circuits](https://journals.aps.org/prl/pdf/10.1103/PhysRevLett.123.078101) (2019)<br>
+[Extended temporal association memory by modulations of inhibitory circuits](https://journals.aps.org/prl/pdf/10.1103/PhysRevLett.123.078101) (2019)<br>
 [Multiscale representations of community structures in attractor neural networks](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC8412329/pdf/pcbi.1009296.pdf) (2021)<br>
-[Laplacian associative memory codes](https://github.com/TatsuyaHaga/laplacian_associative_memory_codes/tree/v1.0.1) (2021)
+[Laplacian associative memory](https://github.com/TatsuyaHaga/laplacian_associative_memory_codes/tree/v1.0.1) (2021)
