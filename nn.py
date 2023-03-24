@@ -2,34 +2,6 @@
 
 import numpy as np
 
-class hopfield():
-    """
-    HOPFIELD NETWORK
-    """
-    def __init__(self, ndim):
-        self.ndim = ndim
-        self.weights = np.zeros((self.ndim, self.ndim))
-
-    def _step(self, x):
-        return np.where(x > 0, 1, -1)
-
-    def _compute_energy(self, state):
-        return -0.5 * np.dot(np.dot(self.weights, state), state.T)
-
-    def train(self, data):
-        for sample in data:
-            memory = np.array([sample])
-            self.weights += memory * memory.T
-            self.weights = (self.weights + self.weights.T) / 2
-        self.weights /= data.shape[0]
-        np.fill_diagonal(self.weights, 0)
-
-    def infer(self, state, units):
-        idx = np.random.randint(0, self.ndim, size=units)
-        spin = np.dot(self.weights[idx,:], state)
-        state[idx] = self.step(spin)
-        return state
-
 class LAM():
     """
     LAPLACIAN ASSOCIATIVE MEMORY (LAM)
