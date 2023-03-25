@@ -17,7 +17,7 @@ class LAM():
         self.V = self.prob * (1-self.prob)
         self.NV = self.N * self.V
         
-        # GENERATE PATTERNS
+        # BINARY STATE VECTORS
         self.xi = (np.random.rand(self.N, self.P) < self.prob).astype('float') # Binary dipole (+/-) input with sparsity
         self.xi_mean = np.sum(self.xi, axis=1, keepdims=True) / self.P
         self.xi_bias = self.xi - self.xi_mean
@@ -50,15 +50,15 @@ class LAM():
         return 1 if i==j else 0
 
     def simulate_single(self, a, eta, epochs, start_node, energycheck=True):
-        self._set_weight(a)
-        self.x = self.xi[:, start_node] + 0.0
+        self._set_weight(a) # Set weight based on alpha
+        self.x = self.xi[:, start_node] + 0.0 # Init network state using start node 
         self.m_log = np.zeros([epochs, self.P])
         self.obj_log = np.zeros([epochs])
 
         for t in range(epochs):
-            self.r = self._step(self.W @ self.x) # Threshold activation (Response)
-            self.x += eta * (self.r - self.x)
-            self.m = (self.xi_bias.T @ self.x) / self.NV # Pattern overlap
+            self.r = self._step(self.W @ self.x) # Threshold activation (Response) - Input to each neuron, dot product of weight matrix (self.W) and current network state (self.x)
+            self.x += eta * (self.r - self.x) # Network update - Simple gradient descent, updating neuron activity as a weighted (eta) average of previous activity (x) to current input (r)
+            self.m = (self.xi_bias.T @ self.x) / self.NV # Pattern overlap / magnetisation - A measure of similarity between the state of the neuron and the average state of its neighbours in the network.
             self.m_log[t,:] = self.m # Update log
 
             if energycheck:
