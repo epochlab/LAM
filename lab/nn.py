@@ -18,7 +18,7 @@ class LAM():
         self.NV = self.N * self.V
         
         # GENERATE PATTERNS
-        self.xi = (np.random.rand(self.N, self.P) < self.prob).astype('float')
+        self.xi = (np.random.rand(self.N, self.P) < self.prob).astype('float') # Binary dipole (+/-) input with sparsity
         self.xi_mean = np.sum(self.xi, axis=1, keepdims=True) / self.P
         self.xi_bias = self.xi - self.xi_mean
 
@@ -56,10 +56,10 @@ class LAM():
         self.obj_log = np.zeros([epochs])
 
         for t in range(epochs):
-            self.r = self._step(self.W @ self.x) # Threshold activation
-            self.x += eta * (self.r - self.x) 
+            self.r = self._step(self.W @ self.x) # Threshold activation (Response)
+            self.x += eta * (self.r - self.x)
             self.m = (self.xi_bias.T @ self.x) / self.NV # Pattern overlap
-            self.m_log[t,:] = self.m
+            self.m_log[t,:] = self.m # Update log
 
             if energycheck:
                 self.obj_log[t] = -(self.x).T @ self.W @ self.x / self.NV # Compute energy
