@@ -7,19 +7,19 @@ class LAM():
     LAPLACIAN ASSOCIATIVE MEMORY (LAM)
     """
     def __init__(self, N, P, prob, H, gamma, norm_mode):
-        self.N = N
-        self.P = P
-        self.prob = prob
-        self.H = H
-        self.gamma = gamma
-        self.norm_mode = norm_mode
+        self.N = N                      # Neurons (n)
+        self.P = P                      # Random memory patterns (n)
+        self.prob = prob                # Sparsity
+        self.H = H                      # Hetero-associative weights
+        self.gamma = gamma              # Inhibition ratio
+        self.norm_mode = norm_mode      # Normalisation
 
         self.V = self.prob * (1-self.prob)
         self.NV = self.N * self.V
         
         # BINARY STATE VECTORS
         self.xi = (np.random.rand(self.N, self.P) < self.prob).astype('float') # Binary dipole (+/-) input with sparsity
-        self.xi_mean = np.sum(self.xi, axis=1, keepdims=True) / self.P
+        self.xi_mean = np.sum(self.xi, axis=1, keepdims=True) / self.P # Mean activation of each neuron across all inputs
         self.xi_bias = self.xi - self.xi_mean
 
         # NORMALIZATION
