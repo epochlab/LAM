@@ -43,7 +43,7 @@ Abstract: *An extended network model for graph-based hierarchical computation, g
 - Benchmark
     - SSIM
     - Dimensional clustering
-Theory
+- Theory
     - Relationship to Hippocampus
 
 ### Q&A
