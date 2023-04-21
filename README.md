@@ -34,21 +34,17 @@ Abstract: *An extended network model for graph-based hierarchical computation, g
     - Karate club network
     - The structure of compartmentalised rooms
     - Images, Language & RL?
-- Networks
-    - LAM
+- Networks (To Do...)
     - Continuous deterministic hopfield
     - BAM > Forgetting memories through hypertuning parameters
     - SDM (Sparse distributed memory)
     - Boltzmann Machine
     - Deep/Dist Belief Network
-    - GRU, LSTM & Transformer
+    - GRU, LSTM
 - Key features
     - Clustering
     - Attractor states
     - Pattern completion
-- LAM
-    - Inference
-    - Datasets & Clustering
 - Benchmark
     - SSIM
     - Dimensional clustering
@@ -74,8 +70,6 @@ Sub-goal finding in RL | Identifying intermediate goals or sub-goals that can he
 [One-shot learning](https://en.wikipedia.org/wiki/One-shot_learning) | A network which aims to classify objects from one, or only a few, examples
 [Hamming distance](https://en.wikipedia.org/wiki/Hamming_distance) |  The minimum number of substitutions required to change one string into the other.
 [Undirected graph](https://en.wikipedia.org/wiki/Graph_(discrete_mathematics)) | A set of objects (called vertices or nodes) that are connected together, where all the edges are bidirectional.
-Local and global inhibitory circuits |
-Arbitrary symmetrical graphs |
 Pattern overlap |
 Reverse querying |
 
