@@ -29,11 +29,6 @@ Abstract: *An extended network model for graph-based hierarchical computation, g
 - How strong is the relationship between hebbian learning, state attractors and sequential segmentation with the hippocampus?
 
 ### To-Do
-- Datasets
-    - Original source (Repeatition problem)
-    - Karate club network
-    - The structure of compartmentalised rooms
-    - Images, Language & RL?
 - Networks (To Do...)
     - Continuous deterministic hopfield
     - BAM > Forgetting memories through hypertuning parameters
@@ -48,6 +43,7 @@ Abstract: *An extended network model for graph-based hierarchical computation, g
 - Benchmark
     - SSIM
     - Dimensional clustering
+- Explore relationship to Hippocampus
 
 ### Q&A
 ? | Notes
