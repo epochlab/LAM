@@ -9,9 +9,9 @@ class LAM():
     def __init__(self, N, P, prob, H, gamma, norm_mode):
         self.N = N                      # Neurons (n)
         self.P = P                      # Random memory patterns (n)
-        self.prob = prob                # Sparsity
+        self.prob = prob                # Sparsity (Activation Probability)
         self.H = H                      # Hetero-associative weights
-        self.gamma = gamma              # Inhibition ratio
+        self.gamma = gamma              # Inhibition ratio (Regularisation)
         self.norm_mode = norm_mode      # Normalisation
 
         self.V = self.prob * (1-self.prob)
