@@ -34,7 +34,7 @@ Abstract: *An extended network model for graph-based hierarchical computation, g
     - BAM > Forgetting memories through hypertuning parameters
     - SDM (Sparse distributed memory)
     - Boltzmann Machine
-    - Deep/Dist Belief Network
+    - DeepBelief Network
     - GRU, LSTM
 - Key features
     - Clustering
