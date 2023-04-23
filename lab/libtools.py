@@ -3,6 +3,9 @@
 import numpy as np
 import matplotlib.pyplot as plt
 
+def downsample_matrix(matrix, factor):
+    return matrix[::factor, ::factor]
+
 def plot_gradient(y, colormap, sz=10, edge_width=0.5):
     x = np.arange(len(y))
     y_norm = y + abs(y.min())
