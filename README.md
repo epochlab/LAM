@@ -45,15 +45,14 @@ Abstract: *An extended network model for graph-based hierarchical computation, g
     - Dimensional clustering
 - Theory
     - Relationship to Hippocampus
+- Proposal
+    - Clustering Unsupervised NN
+    - Denoising
 
-### Proposal
-- Clustering Unsupervised NN
-- Denoising
-
-- Pattern Recognition
-- Memory Capacity
-- Effect of Network Size
-- Rebustness to noise
+    - Pattern Recognition
+    - Memory Capacity
+    - Effect of Network Size
+    - Rebustness to noise
 
 ### Q&A
 ? | Notes
