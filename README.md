@@ -48,7 +48,6 @@ Abstract: *An extended network model for graph-based hierarchical computation, g
 - Proposal
     - Clustering Unsupervised NN
     - Denoising
-
     - Pattern Recognition
     - Memory Capacity
     - Effect of Network Size
