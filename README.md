@@ -46,7 +46,8 @@ Abstract: *An extended network model for graph-based hierarchical computation, g
 - Theory
     - Relationship to Hippocampus
 - Proposal
-    - Clustering Unsupervised NN
+    - Clustering Unsupervised NN / SOM
+    - Relationship to place cells and entorhinal grid cells (Start Node)
     - Denoising
     - Pattern Recognition
     - Memory Capacity
@@ -54,7 +55,7 @@ Abstract: *An extended network model for graph-based hierarchical computation, g
     - Rebustness to noise
 
 ### Q&A
-? | Notes
+??? | Notes
 ------- | -------
 [State-transition graphs](https://en.wikipedia.org/wiki/State_diagram) | A set of states, events or inputs that can trigger transitions between states and describe how the system operates from one state to another in response to events or inputs.
 [Community structure](https://en.wikipedia.org/wiki/Community_structure) | Patterns similar to each other are grouped together into the same community, while patterns that are dissimilar from each other are grouped into different communities.
