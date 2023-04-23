@@ -46,19 +46,27 @@ Abstract: *An extended network model for graph-based hierarchical computation, g
 - Theory
     - Relationship to Hippocampus
 
+### Proposal
+- Clustering Unsupervised NN
+- Denoising
+
+- Pattern Recognition
+- Memory Capacity
+- Effect of Network Size
+- Rebustness to noise
+
 ### Q&A
 ? | Notes
 ------- | -------
-[State-transition graphs](https://en.wikipedia.org/wiki/State_diagram) | A set of states, a set of events or inputs that can trigger transitions between states, and a set of transitions that describe how the system operates from one state to another in response to events or inputs.
-[Community structure](https://en.wikipedia.org/wiki/Community_structure) | Patterns that are similar to each other are grouped together into the same community, while patterns that are dissimilar from each other are grouped into different communities.
+[State-transition graphs](https://en.wikipedia.org/wiki/State_diagram) | A set of states, events or inputs that can trigger transitions between states and describe how the system operates from one state to another in response to events or inputs.
+[Community structure](https://en.wikipedia.org/wiki/Community_structure) | Patterns similar to each other are grouped together into the same community, while patterns that are dissimilar from each other are grouped into different communities.
 [Auto-association weights](https://en.wikipedia.org/wiki/Autoassociative_memory) |  Weights that connect a neuron to itself; used to complete or recover the missing or corrupted parts of the pattern.
 [Hetero-association weights](https://en.wikipedia.org/wiki/Autoassociative_memory) | Weights that connect two different neurons; when a new pattern is presented to the network, hetero-associative weights retrieve the stored pattern most similar to the input pattern.
 [Degree matrix](https://en.wikipedia.org/wiki/Degree_matrix) | A diagonal matrix which contains information about the degree of each vertex, the number of edges attached to each vertex.
-[Adjacency matrix](https://en.wikipedia.org/wiki/Adjacency_matrix) | A square matrix that represents a graph. The rows and columns of the matrix correspond to the vertices of the graph, and the entries of the matrix indicate whether there is an edge between two vertices.
+[Adjacency matrix](https://en.wikipedia.org/wiki/Adjacency_matrix) | A square matrix that represents a graph. The rows and columns of the matrix correspond to the vertices of the graph and sample spatial, orientation and luminance data structures.
 [Laplacian matrix](https://en.wikipedia.org/wiki/Laplacian_matrix) | A square matrix constructed from the adjacency matrix; which encodes the relationships between the vertices. The Laplacian matrix is a useful tool to study various properties of graphs, such as connectivity and community structure.
-[Eigenvalues](https://en.wikipedia.org/wiki/Eigenvalues_and_eigenvectors) | A characteristic vector of a linear transformation is a nonzero vector that changes at most by a scalar factor when that linear transformation is applied to it.
-[Negative associated weights](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC7116367/) | Auto-association ratio allowing neural inhibition
-Assembly specific inhibition | Negative associated weights are weights in a neural network that represent inhibitory connections between neurons; where neurons compete with each other to become active.
+[Eigenvalues](https://en.wikipedia.org/wiki/Eigenvalues_and_eigenvectors) | A characteristic vector of a linear transformation, a nonzero vector that changes at most by a scalar factor when that linear transformation is applied to it.
+[Negative associated weights](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC7116367/) | Negative associated weights are weights in a neural network that represent inhibitory connections between neurons; where neurons compete with each other to become active.
 [Kronecker delta](https://en.wikipedia.org/wiki/Kronecker_delta) | A mathematical function that takes two indices [i] and [j] and returns 1 if they are equal and 0 otherwise.
 [Entorhinal grid cells](https://en.wikipedia.org/wiki/Grid_cell) | Spatial navigation and memory; each grid cell has a unique firing pattern, with multiple peaks of activity that form a hexagonal grid pattern.
 [Cell assemblies](http://www.scholarpedia.org/article/Cell_assemblies) | A network of neurons being repeatedly activated causing excitatory synaptic connections among its members are being strengthened.
