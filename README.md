@@ -29,13 +29,14 @@ Abstract: *An extended network model for graph-based hierarchical computation, g
 ### Blurb (WIP)
 A binary recurrent network into which a embedded topological map structure can reveal patchy connectivity. By setting the state of hopfield network using a point of activation (start_node) and presenting stimulation with location and orientation components, the network identifies overlapping patterns and/or community clusters within the source data.
 
-### SOM Notes
-- Phi disabled?
-
 ### Sigma Notes
 - Increasing sigmaX value, increases the weight given to the opposing SigmaY component
 - Distribution not using full radius when correlating SOAM (**2 missing), should it be normalised in respect gaussian distribution?
 - LAM using distribution directed towards Laplacian (Peaky / Sparse)
+
+### SOM Notes
+- Phi disabled?
+- 
 
 ### To-Do
 - Key features
