@@ -24,29 +24,30 @@ Abstract: *An extended network model for graph-based hierarchical computation, g
 - Event segmentation performed by humans reflects community structures (clusters)
 - Characteristics of place cells and entorhinal grid cells
 - Asymmetrical links generate chunked sequential activities in the hippocampus
-
-### Research questions
 - How strong is the relationship between hebbian learning, state attractors and sequential segmentation with the hippocampus?
 
+### Blurb (WIP)
+A binary recurrent network into which a embedded topological map structure can reveal patchy connectivity. By setting the state of hopfield network using a point of activation (start_node) and presenting stimulation with location and orientation components, settles into a overlappig pattern identifying community clusters within the source data.
+
+### SOM Notes
+- Phi disabled?
+
+### Sigma Notes
+- Increasing sigmaX value, increases the weight given to the opposing SigmaY component
+- LAM using a Laplacian distribution....
+
 ### To-Do
-- Networks (To Do...)
-    - Continuous deterministic hopfield
-    - BAM > Forgetting memories through hypertuning parameters
-    - SDM (Sparse distributed memory)
-    - Boltzmann Machine
-    - DeepBelief Network
-    - GRU, LSTM
 - Key features
     - Clustering
     - Attractor states
-    - Pattern completion
+    - Contour Completion
 - Benchmark
     - SSIM
     - Dimensional clustering
 - Theory
     - Relationship to Hippocampus
 - Proposal
-    - Clustering Unsupervised NN / SOM
+    - Clustering Unsupervised SOM
     - Relationship to place cells and entorhinal grid cells (Start Node)
     - Denoising
     - Pattern Recognition
