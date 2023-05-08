@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 
-import itertools
+import itertools, math
 import numpy as np
 import matplotlib.pyplot as plt
 
@@ -66,6 +66,19 @@ def downsample(mat, factor):
 
 def gaussian(x, sigma):
     return np.exp(-x**2 / (2 * sigma**2)) / (np.sqrt(2 * np.pi) * sigma)
+
+def gabor_filter(sigma_x, sigma_y, deg, samples=20, k=2, min=-5, max=5):
+    gradient = np.linspace(min, max, samples)
+    X, Y = np.meshgrid(gradient, gradient)
+
+    rad = np.deg2rad(deg)
+    X = X * np.cos(rad) - Y * np.sin(rad)
+    Y = X * np.sin(rad) + Y * np.cos(rad)
+
+    C = 1 / (2 * math.pi * sigma_x * sigma_y)
+    z = C * np.exp(-(X**2) / (2 * sigma_x**2) - (Y**2) / (2 * sigma_y**2))
+    gabor = np.cos(X * k) * z
+    return gabor
 
 def plot_gradient(y, colormap, sz=10, edge_width=0.5):
     x = np.arange(len(y))
