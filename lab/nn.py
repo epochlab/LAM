@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 
 import numpy as np
+from tqdm import tqdm
 
 class LAM():
     """
@@ -55,7 +56,7 @@ class LAM():
         self.m_log = np.zeros([epochs, self.P])
         self.obj_log = np.zeros([epochs])
 
-        for t in range(epochs):
+        for t in tqdm(range(epochs)):
             self.r = self._step(self.W @ self.x) # Threshold activation (Response) - Input to each neuron, dot product of weight matrix (self.W) and current network state (self.x)
             self.x += eta * (self.r - self.x) # Network update - Simple gradient descent, updating neuron activity as a weighted (eta) average of previous activity (x) to current input (r)
             self.m = (self.xi_bias.T @ self.x) / self.NV # Pattern overlap / magnetisation - A measure of similarity between the state of the neuron and the average state of its neighbours in the network.
@@ -71,7 +72,7 @@ class LAM():
         self.x = self.xi + 0.0
         self.m_log = np.zeros([simlen,self.P,self.P])
 
-        for t in range(simlen):
+        for t in tqdm(range(simlen)):
             self.r = self._step(self.W @ self.x)
             self.x += eta * (self.r - self.x)
             self.m = (self.xi_bias.T @ self.x) / (self.N * self.V)
