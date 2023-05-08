@@ -4,7 +4,28 @@ import itertools
 import numpy as np
 import matplotlib.pyplot as plt
 
-def construct(src, r=5, sigmaX=4.0, sigmaA=1.0):
+def construct_LAM(src, r=5, sigmaX=4.0, sigmaI=0.1):
+    tmp = itertools.product(range(src.shape[0]), range(src.shape[1]))
+    combi_all = itertools.combinations(tmp, 2)
+    combi = [x for x in combi_all if np.sqrt((x[0][0] - x[1][0])**2 + (x[0][1] - x[1][1])**2) < r]
+
+    edgelist_w = []
+    for x1, x2 in combi:
+        n1 = int(x1[0] * src.shape[1] + x1[1])
+        n2 = int(x2[0] * src.shape[1] + x2[1])
+        intensity = np.exp(-np.sum((src[x1[0],x1[1]] - src[x2[0],x2[1]])**2) / (sigmaI**2))
+        spatial = np.exp(-((x1[0]-x2[0])**2 + (x1[1]-x2[1])**2) / (sigmaX**2))
+        corr = intensity * spatial
+        edgelist_w.append((n1, n2, corr))
+
+    P = src.shape[0] * src.shape[1]
+    W = np.zeros([P, P])
+    for x in edgelist_w:
+        W[x[0],x[1]] = x[2]
+        W[x[1],x[0]] = x[2]
+    return W
+
+def construct_SOAM(src, r=5, sigmaX=4.0, sigmaA=1.0):
     tmp = itertools.product(range(src.shape[0]), range(src.shape[1]))
     combi_all = itertools.combinations(tmp, 2)
     combi = [x for x in combi_all if np.sqrt((x[0][0] - x[1][0])**2 + (x[0][1] - x[1][1])**2) < r]
@@ -40,8 +61,8 @@ def GL_eigen(W, norm_mode='asym'):
     v = v[:,order]
     return e, v
 
-def downsample_matrix(matrix, factor):
-    return matrix[::factor, ::factor]
+def downsample(mat, factor):
+    return mat[::factor, ::factor]
 
 def gaussian(x, sigma):
     return np.exp(-x**2 / (2 * sigma**2)) / (np.sqrt(2 * np.pi) * sigma)
