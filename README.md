@@ -29,14 +29,21 @@ Abstract: *An extended network model for graph-based hierarchical computation, g
 ### Blurb (WIP)
 A binary recurrent network into which a embedded topological map structure can reveal patchy connectivity. By setting the state of hopfield network using a point of activation (start_node) and presenting stimulation with location and orientation components, the network identifies overlapping patterns and/or community clusters within the source data.
 
-### Sigma Notes
-- Increasing sigmaX value, increases the weight given to the opposing SigmaY component
-- Distribution not using full radius when correlating SOAM (**2 missing), should it be normalised in respect gaussian distribution?
-- LAM using distribution directed towards Laplacian (Peaky / Sparse)
-
-### SOM Notes
-- Phi disabled?
-- 
+### Weekly Notes
+- Sigma Notes
+    - Increasing sigmaX value, increases the weight given to the opposing SigmaY component
+    - Distribution not using full radius (as per LAM) when correlating SOAM (**2 missing), should it be normalised in respect gaussian distribution?
+    - LAM using distribution directed towards Laplacian (Peaky / Sparse) | σX = 4.0, σI = 0.1
+    - Small σX (0.1) causes minor disturbance in GL Eigen, otherwise little impact until very high number (25x) reached.
+    - Small σA (0.1) causes heavy artifacts in both GL Eigen and SOAM
+    - Resolved when balanced at 0.1 but then as increased and more weight is given to dspace (spatial domain) the resulting eigenvectors blur and distort.
+    - Having a σA value below 1.0 seems to causes artifacts. If additional weighting required for the angular component best to increase σX instead. 
+    - Fine-Tune: σX = 4.0 | σA = 1.0
+- Angular Component
+    - Phi disabled?
+    - Arc tangent | -π and π
+    - Is *0.5 required to keep deg between -90 and 90?
+    - Should negative response values be rectified [x<0 = 0]?
 
 ### To-Do
 - Key features
