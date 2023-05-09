@@ -25,18 +25,25 @@ def construct_LAM(src, r=5, sigmaX=4.0, sigmaI=0.1):
         W[x[1],x[0]] = x[2]
     return W
 
-def construct_SOAM(src, r=5, sigmaX=4.0, sigmaA=1.0):
+def construct_SOAM(src, r=5, sigmaX=4.0, sigmaA=0.1):
     tmp = itertools.product(range(src.shape[0]), range(src.shape[1]))
-    combi_all = itertools.combinations(tmp, 2)
-    combi = [x for x in combi_all if np.sqrt((x[0][0] - x[1][0])**2 + (x[0][1] - x[1][1])**2) < r]
+    combi = itertools.combinations(tmp, 2)
+
+    x_vals = np.linspace(0, 1, src.shape[1])
+    y_vals = np.linspace(0, 1, src.shape[0])
 
     edgelist_w = []
     for x1, x2 in combi:
-        n1 = int(x1[0] * src.shape[1] + x1[1])
-        n2 = int(x2[0] * src.shape[1] + x2[1])
-        dspace = (x1[0]-x2[0])**2 + (x1[1]-x2[1])**2
+        p1 = (x_vals[x1[1]], y_vals[x1[0]])
+        p2 = (x_vals[x2[1]], y_vals[x2[0]])
+
+        # dspace = (x1[0]-x2[0])**2 + (x1[1]-x2[1])**2
+        dspace = (p1[0]-p2[0])**2 + (p1[1]-p2[1])**2
         dangle = np.pi - np.fabs(np.pi - np.fabs(src[x1[0],x1[1]] - src[x2[0],x2[1]]))
         corr = np.exp(-(dspace**2/sigmaX + dangle**2/sigmaA))
+
+        n1 = int(x1[0] * src.shape[1] + x1[1])
+        n2 = int(x2[0] * src.shape[1] + x2[1])
         edgelist_w.append((n1, n2, corr))
 
     P = src.shape[0] * src.shape[1]
