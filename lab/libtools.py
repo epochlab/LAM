@@ -37,7 +37,6 @@ def construct_SOAM(src, sigmaX=4.0, sigmaA=0.1):
         p1 = (x_vals[x1[1]], y_vals[x1[0]])
         p2 = (x_vals[x2[1]], y_vals[x2[0]])
 
-        # dspace = (x1[0]-x2[0])**2 + (x1[1]-x2[1])**2
         dspace = (p1[0]-p2[0])**2 + (p1[1]-p2[1])**2
         dangle = np.pi - np.fabs(np.pi - np.fabs(src[x1[0],x1[1]] - src[x2[0],x2[1]]))
         corr = np.exp(-(dspace**2/sigmaX + dangle**2/sigmaA))
