@@ -25,7 +25,7 @@ def construct_LAM(src, r=5, sigmaX=4.0, sigmaI=0.1):
         W[x[1],x[0]] = x[2]
     return W
 
-def construct_SOAM(src, sigmaX=4.0, sigmaA=0.1):
+def construct_SOAM(src, sigmaX=1.0, sigmaA=0.1):
     tmp = itertools.product(range(src.shape[0]), range(src.shape[1]))
     combi = itertools.combinations(tmp, 2)
 
