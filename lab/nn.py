@@ -19,8 +19,7 @@ class LAM():
         self.NV = self.N * self.V
         
         # BINARY STATE VECTORS
-        # self.xi = (np.random.rand(self.N, self.P) < self.prob).astype('float')
-        self.xi = np.where((np.random.rand(self.N, self.P) < self.prob), 1, -1).astype('float') # Binary dipole (+/-) input with sparsity
+        self.xi = (np.random.rand(self.N, self.P) < self.prob).astype('float') # Binary dipole (+/-) input with sparsity
         self.xi_mean = np.sum(self.xi, axis=1, keepdims=True) / self.P # Mean activation of each neuron across all inputs
         self.xi_bias = self.xi - self.xi_mean
 
@@ -43,8 +42,7 @@ class LAM():
             exit()
 
     def _step(self, z): # Heaviside step function
-        # return 0.5 * np.sign(z) + 0.5
-        return np.where(z > 0, 1, -1).astype('float')
+        return 0.5 * np.sign(z) + 0.5
 
     def _set_weight(self, a): # Decompose weights
         self.W = a * self.Wauto + self.Whetero - (a+1) * self.WG
