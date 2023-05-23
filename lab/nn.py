@@ -52,7 +52,10 @@ class LAM():
 
     def simulate_single(self, a, eta, epochs, start_node, energycheck=True):
         self._set_weight(a) # Set weight based on alpha
-        self.x = self.xi[:, start_node] + 0.0 # Init network state using start node 
+
+        # self.x = self.xi[:, start_node] + 0.0 # Init network state using start node 
+        self.x = start_node # Custom initial condition
+        
         self.m_log = np.zeros([epochs, self.P])
         self.obj_log = np.zeros([epochs])
 
