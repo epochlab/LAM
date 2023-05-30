@@ -54,7 +54,7 @@ class LAM():
         self._set_weight(a) # Set weight based on alpha
 
         # self.x = self.xi[:, start_node] + 0.0 # Init network state using start node 
-        self.x = start_node # Custom initial condition
+        self.x = start_node # Custom initial activation
         
         self.m_log = np.zeros([epochs, self.P])
         self.obj_log = np.zeros([epochs])
