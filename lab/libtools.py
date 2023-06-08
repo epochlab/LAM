@@ -25,7 +25,7 @@ def construct_LAM(src, r=5, sigmaX=4.0, sigmaI=0.1):
         W[x[1],x[0]] = x[2]
     return W
 
-def construct_SOAM(src, sigmaX=1.0, sigmaA=0.1):
+def construct_SLAM(src, sigmaX=1.0, sigmaA=0.1):
     tmp = itertools.product(range(src.shape[0]), range(src.shape[1]))
     combi = itertools.combinations(tmp, 2)
 
@@ -70,9 +70,9 @@ def GL_eigen(W, norm_mode='asym'):
 def downsample(mat, factor):
     return mat[::factor, ::factor]
 
-def gaussian(x, sigma, dspace):
-    # return np.exp(-x**2 / (2 * sigma**2)) / (np.sqrt(2 * np.pi) * sigma)
-    return np.exp(-(dspace**2/sigma))
+def gaussian(x, sigma):
+    return np.exp(-x**2 / (2 * sigma**2)) / (np.sqrt(2 * np.pi) * sigma)
+    # return np.exp(-(dspace**2/sigma))
 
 def gabor_filter(sigma_x, sigma_y, deg, samples=20, k=2, min=-5, max=5):
     gradient = np.linspace(min, max, samples)
@@ -86,6 +86,26 @@ def gabor_filter(sigma_x, sigma_y, deg, samples=20, k=2, min=-5, max=5):
     z = C * np.exp(-(X**2) / (2 * sigma_x**2) - (Y**2) / (2 * sigma_y**2))
     gabor = np.cos(X * k) * z
     return gabor
+
+def activation_prob(x, temp):
+    p = 1 / (1.0 + np.exp(-x/temp))
+    y = (np.random.rand(*x.shape) < p) * 1.0
+    return y
+
+def HSV2RGB(h,s,v):
+    i = np.floor(h*6)
+    f = h * 6.0 - i
+    p = v * (1.0 - s)
+    q = v * (1.0 - f * s)
+    t = v * (1.0 - (1.0 - f) * s)
+
+    imod = i%6
+    if(imod==0): return p,q,v
+    elif(imod==1): return t,p,v
+    elif(imod==2): return v,p,q
+    elif(imod==3): return v,t,p
+    elif(imod==4): return q,v,p
+    elif(imod==5): return p,v,t
 
 def plot_gradient(y, colormap, sz=10, edge_width=0.5):
     x = np.arange(len(y))
