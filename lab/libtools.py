@@ -125,6 +125,9 @@ def HSV2RGB(h,s,v):
     elif(imod==4): return q,v,p
     elif(imod==5): return p,v,t
 
+def unit_count(a, b):
+    return [np.sum(a/np.size(a)), np.sum(b/np.size(b))]
+
 def plot_gradient(y, colormap, sz=10, edge_width=0.5):
     x = np.arange(len(y))
     y_norm = y + abs(y.min())
