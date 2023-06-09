@@ -70,9 +70,8 @@ def GL_eigen(W, norm_mode='asym'):
 def downsample(mat, factor):
     return mat[::factor, ::factor]
 
-def gaussian(x, sigma):
-    return np.exp(-x**2 / (2 * sigma**2)) / (np.sqrt(2 * np.pi) * sigma)
-    # return np.exp(-(dspace**2/sigma))
+def gaussian(dist, sigma):
+    return np.exp(-(dist**2/sigma))
 
 def gabor_filter(sigma_x, sigma_y, deg, samples=20, k=2, min=-5, max=5):
     gradient = np.linspace(min, max, samples)
