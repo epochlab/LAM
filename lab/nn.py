@@ -1,5 +1,7 @@
 #!/usr/bin/env python3
 
+import libtools
+
 import numpy as np
 from tqdm import tqdm
 
@@ -46,6 +48,20 @@ class LAM():
 
     def _set_weight(self, a): # Decompose weights
         self.W = a * self.Wauto + self.Whetero - (a+1) * self.WG
+
+    def _set_state(self, features, temp):
+        M = np.size(self.xi, axis=1) # Nodes
+        I = np.zeros_like(self.xi) # Malloc
+
+        for node in range(M):
+            k = features.flatten()[node] # Gabor response
+            state = (self.xi[:, node].copy() * 2) - 1 # State of each node and re-map between -1 and 1
+            state *= k # Multiply against response
+            I[:,node] = state
+
+        Inorm = np.sum(I, axis=1) * 1/M
+        init_state = libtools.activation_prob(Inorm, temp)
+        return init_state
 
     def _kronecker_delta(self, i, j):
         return 1 if i==j else 0
