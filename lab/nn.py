@@ -47,19 +47,19 @@ class LAM():
     def _set_weight(self, a): # Decompose weights
         self.W = a * self.Wauto + self.Whetero - (a+1) * self.WG
 
-    def _kronecker_delta(i, j):
+    def _kronecker_delta(self, i, j):
         return 1 if i==j else 0
 
-    def simulate_single(self, a, eta, epochs, start_node, energycheck=True):
+    def simulate_single(self, a, eta, simlen, start_node, energycheck=True):
         self._set_weight(a) # Set weight based on alpha
 
-        # self.x = self.xi[:, start_node] + 0.0 # Init network state using start node 
-        self.x = start_node # Custom initial activation
+        self.x = self.xi[:, start_node] + 0.0 # Init network state using start node
+        # self.x = start_node # Custom initial activation
         
-        self.m_log = np.zeros([epochs, self.P])
-        self.obj_log = np.zeros([epochs])
+        self.m_log = np.zeros([simlen, self.P])
+        self.obj_log = np.zeros([simlen])
 
-        for t in tqdm(range(epochs)):
+        for t in tqdm(range(simlen)):
             self.r = self._step(self.W @ self.x) # Threshold activation (Response) - Input to each neuron, dot product of weight matrix (self.W) and current network state (self.x)
             self.x += eta * (self.r - self.x) # Network update - Simple gradient descent, updating neuron activity as a weighted (eta) average of previous activity (x) to current input (r)
             self.m = (self.xi_bias.T @ self.x) / self.NV # Pattern overlap / magnetisation - A measure of similarity between the state of the neuron and the average state of its neighbours in the network.

@@ -87,6 +87,24 @@ def gabor_filter(sigma_x, sigma_y, deg, samples=20, k=2, min=-5, max=5):
     gabor = np.cos(X * k) * z
     return gabor
 
+def gabor_conv(img, src, step=20, k_size=5):
+    pad = int(step/2)
+    pad_im = np.pad(img, pad, mode='constant', constant_values=0)
+    features = np.zeros_like(pad_im)
+
+    for i in range(src.shape[0]):
+        for j in range(src.shape[1]):
+            atan = src[i][j] - np.pi # Arc tangent | -π and π
+            deg = np.rad2deg(atan*0.5) # *0.5 to keep range between -90 and 90
+            kernel = gabor_filter(2, 1, deg, samples=step, min=-k_size, max=k_size) # Orientation
+            patch = pad_im[i:i+step, j:j+step]
+            features[int(i+pad),int(j+pad)] = np.sum(patch * kernel) # Firing Rate / Response
+
+    features = features[pad:pad+src.shape[0],pad:pad+src.shape[1]]
+    features[features<=0] = 0 # Rectify
+
+    return features
+
 def activation_prob(x, temp):
     p = 1 / (1.0 + np.exp(-x/temp))
     y = (np.random.rand(*x.shape) < p) * 1.0
