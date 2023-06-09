@@ -66,11 +66,14 @@ class LAM():
     def _kronecker_delta(self, i, j):
         return 1 if i==j else 0
 
-    def simulate_single(self, a, eta, simlen, start_node, energycheck=True):
+    def simulate_single(self, a, eta, simlen, start_node, cond=False, energycheck=True):
         self._set_weight(a) # Set weight based on alpha
 
-        self.x = self.xi[:, start_node] + 0.0 # Init network state using start node
-        # self.x = start_node # Custom initial activation
+         # Init network state
+        if cond==False:
+            self.x = self.xi[:, start_node] + 0.0
+        else:
+            self.x = start_node
         
         self.m_log = np.zeros([simlen, self.P])
         self.obj_log = np.zeros([simlen])
