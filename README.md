@@ -1,4 +1,4 @@
-# PSY6431
+# Laplacian Associative Memory (LAM)
 
 **Project ID:**  Tl44vh6a
 
