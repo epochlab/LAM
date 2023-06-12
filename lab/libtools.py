@@ -104,11 +104,6 @@ def gabor_conv(img, src, step=20, k_size=5):
 
     return features
 
-def activation_prob(x, temp): # Boltzmann Distribution ?
-    p = 1 / (1.0 + np.exp(-x/temp))
-    y = (np.random.rand(*x.shape) < p) * 1.0
-    return y
-
 def HSV2RGB(h,s,v):
     i = np.floor(h*6)
     f = h * 6.0 - i
@@ -123,6 +118,13 @@ def HSV2RGB(h,s,v):
     elif(imod==3): return v,t,p
     elif(imod==4): return q,v,p
     elif(imod==5): return p,v,t
+
+def grade(ch1, ch2, ch3):
+    map = np.zeros([ch1.shape[0],ch1.shape[1],3])
+    for i in range(ch1.shape[0]):
+        for j in range(ch1.shape[1]):
+            map[i,j,:] = HSV2RGB(ch1[i,j]/(2*np.pi), ch2, ch3[i,j])
+    return map
 
 def unit_count(a, b):
     return [np.sum(a/np.size(a)), np.sum(b/np.size(b))]

@@ -60,8 +60,13 @@ class LAM():
             I[:,node] = state
 
         Inorm = np.sum(I, axis=1) * 1/M
-        init_state = libtools.activation_prob(Inorm, temp)
-        return init_state
+        init = self._boltzmann_prob(Inorm, temp)
+        return init
+
+    def _boltzmann_prob(self, x, temp):
+        p = 1 / (1.0 + np.exp(-x/temp))
+        y = (np.random.rand(*x.shape) < p) * 1.0
+        return y
 
     def _kronecker_delta(self, i, j):
         return 1 if i==j else 0
