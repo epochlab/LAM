@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 
-import itertools, math
+import itertools, math, imageio
 import numpy as np
 import matplotlib.pyplot as plt
 
@@ -104,7 +104,7 @@ def gabor_conv(img, src, step=20, k_size=5):
 
     return features
 
-def activation_prob(x, temp):
+def activation_prob(x, temp): # Boltzmann Distribution ?
     p = 1 / (1.0 + np.exp(-x/temp))
     y = (np.random.rand(*x.shape) < p) * 1.0
     return y
