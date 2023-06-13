@@ -1,7 +1,5 @@
 #!/usr/bin/env python3
 
-import libtools
-
 import numpy as np
 from tqdm import tqdm
 
@@ -9,7 +7,7 @@ class LAM():
     """
     LAPLACIAN ASSOCIATIVE MEMORY (LAM)
     """
-    def __init__(self, N, P, prob, H, gamma, norm_mode):
+    def __init__(self, N, P, prob, H, gamma, norm_mode, start_node, features=None, temp=None):
         self.N = N                      # Neurons (n)
         self.P = P                      # Random memory patterns (n)
         self.prob = prob                # Sparsity (Activation Probability)
@@ -20,8 +18,17 @@ class LAM():
         self.V = self.prob * (1-self.prob)
         self.NV = self.N * self.V
         
+        self.start_node = start_node
+        self.features = features
+        self.temp = temp
+
         # BINARY STATE VECTORS
         self.xi = (np.random.rand(self.N, self.P) < self.prob).astype('float') # Binary dipole (+/-) input with sparsity
+
+        if self.features.any()!=None and self.temp!=None:
+            print("Using feature-based initial condition")
+            self.xi[:, self.start_node] = self._set_state(self.features)
+
         self.xi_mean = np.sum(self.xi, axis=1, keepdims=True) / self.P # Mean activation of each neuron across all inputs
         self.xi_bias = self.xi - self.xi_mean
 
@@ -49,7 +56,7 @@ class LAM():
     def _set_weight(self, a): # Decompose weights
         self.W = a * self.Wauto + self.Whetero - (a+1) * self.WG
 
-    def _set_state(self, features, temp):
+    def _set_state(self, features):
         M = np.size(self.xi, axis=1) # Nodes
         I = np.zeros_like(self.xi) # Malloc
 
@@ -60,8 +67,7 @@ class LAM():
             I[:,node] = state
 
         Inorm = np.sum(I, axis=1) * 1/M
-        init = self._boltzmann_prob(Inorm, temp)
-        return init
+        return self._boltzmann_prob(Inorm, self.temp)
 
     def _boltzmann_prob(self, x, temp):
         p = 1 / (1.0 + np.exp(-x/temp))
@@ -71,14 +77,9 @@ class LAM():
     def _kronecker_delta(self, i, j):
         return 1 if i==j else 0
 
-    def simulate_single(self, a, eta, simlen, start_node, cond=False, energycheck=True):
+    def simulate_single(self, a, eta, simlen, energycheck=True):
         self._set_weight(a) # Set weight based on alpha
-
-         # Init network state
-        if cond==False:
-            self.x = self.xi[:, start_node] + 0.0
-        else:
-            self.x = start_node
+        self.x = self.xi[:, self.start_node] + 0.0
         
         self.m_log = np.zeros([simlen, self.P])
         self.obj_log = np.zeros([simlen])
