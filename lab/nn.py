@@ -26,8 +26,10 @@ class LAM():
         self.xi = (np.random.rand(self.N, self.P) < self.prob).astype('float') # Binary dipole (+/-) input with sparsity
 
         if self.features.any()!=None and self.temp!=None:
+            state = self._set_state(self.features)
+            self.xi[:, self.start_node] = state
             print("Using feature-based initial condition")
-            self.xi[:, self.start_node] = self._set_state(self.features)
+            print("Sparsity:", np.sum(state/np.size(state)))
 
         self.xi_mean = np.sum(self.xi, axis=1, keepdims=True) / self.P # Mean activation of each neuron across all inputs
         self.xi_bias = self.xi - self.xi_mean
