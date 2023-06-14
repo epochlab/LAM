@@ -4,6 +4,28 @@ import itertools, math, imageio
 import numpy as np
 import matplotlib.pyplot as plt
 
+def preference_map(n, ext, N):
+    L = (np.random.rand(n) < 0.5) * 2.0 - 1 # Binary array length
+    phi = np.random.rand(n) * 2 * np.pi # Random angle | 0 and 2π
+
+    x, y = np.meshgrid(np.linspace(-ext, ext, N), np.linspace(-ext, ext, N))
+
+    Z = np.zeros([N,N])
+    for a in range(N):
+        for b in range(N):
+            zx = 0.0
+            zy = 0.0
+
+            for j in range(n):
+                theta = (j+1) * np.pi / n
+                xk_phi = x[a,b] * np.cos(theta) + y[a,b] * np.sin(theta) + phi[j]
+                
+                zx += L[j] * np.cos(xk_phi)
+                zy += L[j] * np.sin(xk_phi)
+
+            Z[a][b] = (np.arctan2(zy,zx) + np.pi)
+    return Z
+
 def construct_LAM(src, r=5, sigmaX=4.0, sigmaI=0.1):
     tmp = itertools.product(range(src.shape[0]), range(src.shape[1]))
     combi_all = itertools.combinations(tmp, 2)
