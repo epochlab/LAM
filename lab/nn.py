@@ -61,12 +61,12 @@ class LAM():
     def _set_state(self, features):
         I = np.zeros_like(self.xi) # Malloc
         for node in range(self.xi.shape[1]):
-            k = features.flatten()[node] # Gabor response
             state = (self.xi[:, node].copy() * 2) - 1 # State of each node and re-map between -1 and 1
-            I[:,node] = state * k
+            I[:,node] = state * features.flatten()[node]
 
         Inorm = np.sum(I, axis=1) * 1/self.xi.shape[1]
-        return self._boltzmann_prob(Inorm, self.temp)
+        act = self._boltzmann_prob(Inorm, self.temp)
+        return act
 
     def _boltzmann_prob(self, x, temp):
         p = 1 / (1.0 + np.exp(-x/temp))
@@ -79,6 +79,7 @@ class LAM():
     def simulate_single(self, a, eta, simlen, energycheck=True):
         self._set_weight(a) # Set weight based on alpha
         self.x = self.xi[:, self.start_node] + 0.0
+        
         self.m_log = np.zeros([simlen, self.P])
         self.n_log = np.zeros([simlen, self.N])
         self.obj_log = np.zeros([simlen])

@@ -136,7 +136,6 @@ def render(array, sz, out, col):
             f = array[i,:]
             f = f + abs(f.min())
             f /= f.max()
-            # m[start_node] = m.min()
             seq.append(plt.colormaps[col](f.reshape(sz)) * 255.0)
     imageio.mimsave(out, np.uint8(seq))
     return print("RenderIO Complete")
