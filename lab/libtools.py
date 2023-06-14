@@ -129,7 +129,7 @@ def grade(ch1, ch2, ch3):
 def unit_count(a, b):
     return [np.sum(a/np.size(a)), np.sum(b/np.size(b))]
 
-def render(array, sz, out):
+def render(array, sz, out, col):
     seq = []
     for i in range(array.shape[0]):
         if i%10==0:
@@ -137,7 +137,7 @@ def render(array, sz, out):
             f = f + abs(f.min())
             f /= f.max()
             # m[start_node] = m.min()
-            seq.append(plt.colormaps['magma'](f.reshape(sz)) * 255.0)
+            seq.append(plt.colormaps[col](f.reshape(sz)) * 255.0)
     imageio.mimsave(out, np.uint8(seq))
     return print("RenderIO Complete")
 

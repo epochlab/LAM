@@ -80,18 +80,21 @@ class LAM():
         self._set_weight(a) # Set weight based on alpha
         self.x = self.xi[:, self.start_node] + 0.0
         self.m_log = np.zeros([simlen, self.P])
+        self.n_log = np.zeros([simlen, self.N])
         self.obj_log = np.zeros([simlen])
         
         for t in tqdm(range(simlen)):
             self.r = self._step(self.W @ self.x) # Threshold activation (Response) - Input to each neuron, dot product of weight matrix (self.W) and current network state (self.x)
             self.x += eta * (self.r - self.x) # Network update - Simple gradient descent, updating neuron activity as a weighted (eta) average of previous activity (x) to current input (r)
             self.m = (self.xi_bias.T @ self.x) / self.NV # Pattern overlap / magnetisation - A measure of similarity between the state of the neuron and the average state of its neighbours in the network.
+            
             self.m_log[t,:] = self.m # Update log
+            self.n_log[t,:] = self.x # Update log
 
             if energycheck:
                 self.obj_log[t] = -(self.x).T @ self.W @ self.x / self.NV # Compute energy
 
-        return (self.m_log, self.obj_log)
+        return (self.m_log, self.n_log, self.obj_log)
     
     def simulate_allstarts(self, a, eta, simlen):
         self._set_weight(a)
