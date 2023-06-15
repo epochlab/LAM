@@ -25,7 +25,7 @@ class LAM():
         # BINARY STATE VECTORS
         self.xi = (np.random.rand(self.N, self.P) < self.prob).astype('float') # Binary dipole (+/-) input with sparsity
 
-        if self.features.any()!=None and self.temp!=None:
+        if self.temp!=None:
             state = self._set_state(self.features)
             self.xi[:, self.start_node] = state
             print("Using feature-based initial condition")
