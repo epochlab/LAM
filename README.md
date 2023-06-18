@@ -60,24 +60,24 @@ Topic | Description
 
 Parameter | Term
 --- | ---
-'graph' | a structure of pair-wise nodes
-'weights' | a matrix which transforms the relationship between neurons
-'n' | Node or pixel
-'P' | Total number of nodes (n-by-n)
-'W' | Adjacency matrix (P-by-P)
-'N' | Number of neurons (per node)
-'start_node' | Initial cortical unit
-'alpha' | Ratio between hetero- and auto- association
-'prob' | Sparsity or number of active neurons
-'temp' | Boltzmann distribution
-'H' | Hetero-associative weights (Asymmetric normalisation)
-'m' | Pattern overlap
-'xi' | Binary state vectors (one for each node)
-'x' | Network response
-'I' | Initial condition (Binary afferent state vector)
-'sigmaX' | Spatial component (Euclidean)
-'sigmaA' | Orientation preference (Value diff.)
-'e' | Energy
+`graph` | a structure of pair-wise nodes
+`weights` | a matrix which transforms the relationship between neurons
+`n` | Node or pixel
+`P` | Total number of nodes (n-by-n)
+`W` | Adjacency matrix (P-by-P)
+`N` | Number of neurons (per node)
+`start_node` | Initial cortical unit
+`alpha` | Ratio between hetero- and auto- association
+`prob` | Sparsity or number of active neurons
+`temp` | Boltzmann distribution
+`H` | Hetero-associative weights (Asymmetric normalisation)
+`m` | Pattern overlap
+`xi` | Binary state vectors (one for each node)
+`x` | Network response
+`I` | Initial condition (Binary afferent state vector)
+`sigmaX` | Spatial component (Euclidean)
+`sigmaA` | Orientation preference (Value diff.)
+`e` | Energy
 
 ### References:
 [Neural networks and physical systems with emergent collective computational abilities](https://www.researchgate.net/publication/16246447_Neural_Networks_and_Physical_Systems_with_Emergent_Collective_Computational_Abilities) (1982)<br>
