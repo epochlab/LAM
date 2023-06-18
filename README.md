@@ -29,63 +29,54 @@ Abstract: *An extended network model for graph-based hierarchical computation, g
 ### Blurb (WIP)
 A binary recurrent network into which a embedded topological map structure can reveal patchy connectivity. By setting the state of hopfield network using a point of activation (start_node) and presenting stimulation with location and orientation components, the network identifies overlapping patterns and/or community clusters within the source data.
 
-### Weekly Notes
-- Sigma
-    - Increasing sigmaX value, increases the weight given to the opposing SigmaY component
-    - Distribution not using full radius (as per LAM) when correlating SOAM (**2 missing), should it be normalised in respect gaussian distribution?
-    - LAM using distribution directed towards Laplacian (Peaky / Sparse) | σX = 4.0, σI = 0.1
-    - Small σX (0.1) causes minor disturbance in GL Eigen, otherwise little impact until very high number (25x) reached.
-    - Small σA (0.1) causes heavy artifacts in both GL Eigen and SOAM
-    - Resolved when balanced at 0.1 but then as increased and more weight is given to dspace (spatial domain) the resulting eigenvectors blur and distort.
-    - Having a σA value below 1.0 seems to causes artifacts. If additional weighting required for the angular component best to increase σX instead. 
-    - Fine-Tune: σX = 4.0 | σA = 1.0
-- Angular Component
-    - Phi disabled?
-    - Arc tangent | -π and π
-    - Is *0.5 required to keep deg between -90 and 90?
-    - Should negative response values be rectified [x<0 = 0]?
-
-### To-Do
 - Key features
     - Clustering
     - Attractor states
-    - Contour Completion
-- Benchmark
-    - SSIM
-    - Dimensional clustering
+    - Binary state vector
+    - Afferent stimulus
+    - Boltzmann distribution
+    - Contour completion???
 - Theory
-    - Relationship to Hippocampus
-- Proposal
-    - Clustering Unsupervised SOM
-    - Relationship to place cells and entorhinal grid cells (Start Node)
-    - Denoising
-    - Pattern Recognition
-    - Memory Capacity
-    - Effect of Network Size
-    - Rebustness to noise
+    - Neurobiological maps
+    - Hopfield networks
+    - Information efficiency
 
-### Q&A
-??? | Notes
+### Glossary
+Topic | Description
 ------- | -------
 [State-transition graphs](https://en.wikipedia.org/wiki/State_diagram) | A set of states, events or inputs that can trigger transitions between states and describe how the system operates from one state to another in response to events or inputs.
 [Community structure](https://en.wikipedia.org/wiki/Community_structure) | Patterns similar to each other are grouped together into the same community, while patterns that are dissimilar from each other are grouped into different communities.
-[Auto-association weights](https://en.wikipedia.org/wiki/Autoassociative_memory) |  Weights that connect a neuron to itself; used to complete or recover the missing or corrupted parts of the pattern.
-[Hetero-association weights](https://en.wikipedia.org/wiki/Autoassociative_memory) | Weights that connect two different neurons; when a new pattern is presented to the network, hetero-associative weights retrieve the stored pattern most similar to the input pattern.
+[Auto-association weights](https://en.wikipedia.org/wiki/Autoassociative_memory) |  Weights that connect a neuron to itself; used to complete or rectrieve/recover missing or corrupted parts of the pattern (Remove interference).
+[Hetero-association weights](https://en.wikipedia.org/wiki/Autoassociative_memory) | Weights that connect two different neurons; when a new pattern is presented to the network, hetero-associative weights recall the stored pattern most similar to the input pattern (Banana > Monkey).
 [Degree matrix](https://en.wikipedia.org/wiki/Degree_matrix) | A diagonal matrix which contains information about the degree of each vertex, the number of edges attached to each vertex.
-[Adjacency matrix](https://en.wikipedia.org/wiki/Adjacency_matrix) | A square matrix that represents a graph. The rows and columns of the matrix correspond to the vertices of the graph and sample spatial, orientation and luminance data structures.
+[Adjacency matrix](https://en.wikipedia.org/wiki/Adjacency_matrix) | A square matrix that represents a graph. The rows and columns of the matrix correspond to the vertices of the graph and sample both the spatial component and orientation preference of the data structures.
 [Laplacian matrix](https://en.wikipedia.org/wiki/Laplacian_matrix) | A square matrix constructed from the adjacency matrix; which encodes the relationships between the vertices. The Laplacian matrix is a useful tool to study various properties of graphs, such as connectivity and community structure.
-[Eigenvalues](https://en.wikipedia.org/wiki/Eigenvalues_and_eigenvectors) | A characteristic vector of a linear transformation, a nonzero vector that changes at most by a scalar factor when that linear transformation is applied to it.
-[Negative associated weights](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC7116367/) | Negative associated weights are weights in a neural network that represent inhibitory connections between neurons; where neurons compete with each other to become active.
-[Kronecker delta](https://en.wikipedia.org/wiki/Kronecker_delta) | A mathematical function that takes two indices [i] and [j] and returns 1 if they are equal and 0 otherwise.
-[Entorhinal grid cells](https://en.wikipedia.org/wiki/Grid_cell) | Spatial navigation and memory; each grid cell has a unique firing pattern, with multiple peaks of activity that form a hexagonal grid pattern.
-[Cell assemblies](http://www.scholarpedia.org/article/Cell_assemblies) | A network of neurons being repeatedly activated causing excitatory synaptic connections among its members are being strengthened.
-Sub-goal finding in RL | Identifying intermediate goals or sub-goals that can help an agent achieve its ultimate objective more efficiently.
-[Kaiming initialization](https://arxiv.org/pdf/1502.01852v1.pdf) | An initialization method accounting for the non-linearity of activation functions, avoid reducing or magnifying the magnitudes of input signals exponentially.
-[One-shot learning](https://en.wikipedia.org/wiki/One-shot_learning) | A network which aims to classify objects from one, or only a few, examples
-[Hamming distance](https://en.wikipedia.org/wiki/Hamming_distance) |  The minimum number of substitutions required to change one string into the other.
-[Undirected graph](https://en.wikipedia.org/wiki/Graph_(discrete_mathematics)) | A set of objects (called vertices or nodes) that are connected together, where all the edges are bidirectional.
-Pattern overlap |
-Reverse querying |
+[Euclidean Distance](https://en.wikipedia.org/wiki/Euclidean_distance) | The length of a line segment between the two points.
+[Eigenvectors](https://en.wikipedia.org/wiki/Eigenvalues_and_eigenvectors) | A characteristic vector of a linear transformation, a nonzero vector that changes at most by a scalar factor when that linear transformation is applied to it.
+[Hopfield network](https://en.wikipedia.org/wiki/Hopfield_network) | A form of recurrent artificial neural network serving a as content-addressable ("associative") memory system with binary threshold nodes.
+[Afferent stimuli](https://en.wikipedia.org/wiki/Afferent_nerve_fiber) | Afferent neurons bring stimuli to the brain, where the signal is integrated and processed.
+[Boltzmann distribution](https://en.wikipedia.org/wiki/Boltzmann_distribution) | A probability distribution or probability measure that gives the probability that a system will be in a certain state as a function of that state's energy and the temperature of the system.
+[HSV2RGB](https://en.wikipedia.org/wiki/HSL_and_HSV) | Alternative representation of the RGB color model, colors of each hue are arranged in a radial slice, around a central axis of neutral colors which ranges from black at the bottom to white at the top.
+
+Parameter | Term
+------- | -------
+n | Node or pixel
+P | Total number of nodes (n-by-n)
+W | Adjacency matrix (P-by-P)
+N | Number of neurons (per node)
+start_node | Initial cortical unit
+alpha | Ratio between hetero- and auto- association
+prob | Sparsity or number of active pixels
+temp | Boltzmann distribution adaptive parameter
+m | Pattern overlap
+xi | Binary state vectors (Vector for each neuron)
+x | Network response
+H | Hetero-associative weights (Asymmetric normalisation)
+I | Initial condition (Binary afferent state vector)
+e | Energy
+sigmaX | Spatial component (Euclidean)
+sigmaA | Orientation preference (Value diff.)
+
 
 ### References:
 [Neural networks and physical systems with emergent collective computational abilities](https://www.researchgate.net/publication/16246447_Neural_Networks_and_Physical_Systems_with_Emergent_Collective_Computational_Abilities) (1982)<br>
@@ -93,7 +84,6 @@ Reverse querying |
 [Information storage in neural networks with low levels of activity](https://sci-hub.ru/10.1103/PhysRevA.35.2293) (1987)<br>
 [The enhanced storage capacity in neural networks with low activity level](https://sci-hub.ru/10.1209/0295-5075/6/2/002) (1988)<br>
 [Finding structure in time](http://psych.colorado.edu/~kimlab/Elman1990.pdf) (1990)<br>
-[A neural probabilistic language model](https://www.jmlr.org/papers/volume3/bengio03a/bengio03a.pdf) (2003)<br>
 [Extended temporal association memory by modulations of inhibitory circuits](https://journals.aps.org/prl/pdf/10.1103/PhysRevLett.123.078101) (2019)<br>
 [Multiscale representations of community structures in attractor neural networks](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC8412329/pdf/pcbi.1009296.pdf) (2021)<br>
 [Laplacian associative memory](https://github.com/TatsuyaHaga/laplacian_associative_memory_codes/tree/v1.0.1) (2021)
