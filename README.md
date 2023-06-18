@@ -57,11 +57,12 @@ Topic | Description
 [Afferent stimuli](https://en.wikipedia.org/wiki/Afferent_nerve_fiber) | Afferent neurons bring stimuli to the brain, where the signal is integrated and processed.
 [Boltzmann distribution](https://en.wikipedia.org/wiki/Boltzmann_distribution) | A probability distribution or probability measure that gives the probability that a system will be in a certain state as a function of that state's energy and the temperature of the system.
 
+--------------------------------------------------------------------
 
-Parameter | Term
+Parameter | Description
 --- | ---
-`graph` | a structure of pair-wise nodes
-`weights` | a matrix which transforms the relationship between neurons
+`graph` | A structure of pair-wise nodes
+`weights` | A matrix which transforms the relationship between neurons
 `n` | Node or pixel
 `P` | Total number of nodes (n-by-n)
 `W` | Adjacency matrix (P-by-P)
