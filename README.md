@@ -61,6 +61,8 @@ Topic | Description
 
 Parameter | Description
 --- | ---
+`node` | A cell/unit of information
+`neuron` | An adaptive parameter assigned to a node
 `graph` | A structure of pair-wise nodes
 `weights` | A matrix which transforms the relationship between neurons
 `n` | Node or pixel
