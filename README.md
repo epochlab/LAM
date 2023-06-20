@@ -3,7 +3,7 @@
 **Project ID:**  Tl44vh6a
 
 <p align="center">
-  <img src="https://github.com/epochlab/LAM/blob/main/sample.jpg">
+  <img src="https://github.com/epochlab/LAM/blob/main/sample.png">
 </p>
 
 --------------------------------------------------------------------
