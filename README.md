@@ -42,23 +42,6 @@ A binary recurrent network into which a embedded topological map structure can r
     - Information efficiency
 
 ### Glossary
-Topic | Description
---- | ---
-[State-transition graphs](https://en.wikipedia.org/wiki/State_diagram) | A set of states, events or inputs that can trigger transitions between states and describe how the system operates from one state to another in response to events or inputs.
-[Community structure](https://en.wikipedia.org/wiki/Community_structure) | Patterns similar to each other are grouped together into the same community, while patterns that are dissimilar from each other are grouped into different communities.
-[Auto-association weights](https://en.wikipedia.org/wiki/Autoassociative_memory) |  Weights that connect a neuron to itself; used to complete or rectrieve/recover missing or corrupted parts of the pattern (Remove interference).
-[Hetero-association weights](https://en.wikipedia.org/wiki/Autoassociative_memory) | Weights that connect two different neurons; when a new pattern is presented to the network, hetero-associative weights recall the stored pattern most similar to the input pattern (Banana > Monkey).
-[Degree matrix](https://en.wikipedia.org/wiki/Degree_matrix) | A diagonal matrix which contains information about the degree of each vertex, the number of edges attached to each vertex.
-[Adjacency matrix](https://en.wikipedia.org/wiki/Adjacency_matrix) | A square matrix that represents a graph. The rows and columns of the matrix correspond to the vertices of the graph and sample both the spatial component and orientation preference of the data structures.
-[Laplacian matrix](https://en.wikipedia.org/wiki/Laplacian_matrix) | A square matrix constructed from the adjacency matrix; which encodes the relationships between the vertices. The Laplacian matrix is a useful tool to study various properties of graphs, such as connectivity and community structure.
-[Euclidean Distance](https://en.wikipedia.org/wiki/Euclidean_distance) | The length of a line segment between the two points.
-[Eigenvectors](https://en.wikipedia.org/wiki/Eigenvalues_and_eigenvectors) | A characteristic vector of a linear transformation, a nonzero vector that changes at most by a scalar factor when that linear transformation is applied to it.
-[Hopfield network](https://en.wikipedia.org/wiki/Hopfield_network) | A form of recurrent artificial neural network serving a as content-addressable ("associative") memory system with binary threshold nodes.
-[Afferent stimuli](https://en.wikipedia.org/wiki/Afferent_nerve_fiber) | Afferent neurons bring stimuli to the brain, where the signal is integrated and processed.
-[Boltzmann distribution](https://en.wikipedia.org/wiki/Boltzmann_distribution) | A probability distribution or probability measure that gives the probability that a system will be in a certain state as a function of that state's energy and the temperature of the system.
-
---------------------------------------------------------------------
-
 Parameter | Description
 --- | ---
 `node` | A cell/unit of information
