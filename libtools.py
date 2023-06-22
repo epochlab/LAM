@@ -145,7 +145,7 @@ def grade(ch1, ch2, ch3):
     map = np.zeros([ch1.shape[0],ch1.shape[1],3])
     for i in range(ch1.shape[0]):
         for j in range(ch1.shape[1]):
-            map[i,j,:] = HSV2RGB(ch1[i,j]/(2*np.pi), ch2, ch3[i,j])
+            map[i,j,:] = HSV2RGB(ch1[i,j], ch2, ch3[i,j])
     return map
 
 def unit_count(a, b):
