@@ -126,6 +126,9 @@ def gabor_conv(img, src, step=20, k_size=5):
 
     return features
 
+def unit_count(x):
+    return np.sum(x/np.size(x))
+
 def HSV2RGB(h,s,v):
     i = np.floor(h*6)
     f = h * 6.0 - i
@@ -147,9 +150,6 @@ def grade(ch1, ch2, ch3):
         for j in range(ch1.shape[1]):
             map[i,j,:] = HSV2RGB(ch1[i,j], ch2, ch3[i,j])
     return map
-
-def unit_count(a, b):
-    return [np.sum(a/np.size(a)), np.sum(b/np.size(b))]
 
 def render(x, step, out, col='magma'):
     seq = []
