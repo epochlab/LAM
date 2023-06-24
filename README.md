@@ -44,21 +44,25 @@ A binary recurrent network into which a embedded topological map structure can r
 ### Glossary
 Parameter | Description
 --- | ---
-`node` | A cell/unit of information
-`neuron` | An adaptive parameter assigned to a node
-`graph` | A structure of pair-wise nodes
-`weights` | A matrix which transforms the relationship between neurons
-`n` | Node or pixel
-`P` | Total number of nodes (n-by-n)
-`W` | Adjacency matrix (P-by-P)
-`N` | Number of neurons (per node)
+`cortex` | A cortical sheet of neurons
+`neuron` | A cell/unit of information
+`graph` | A structure of nodes
+`node` | Binary state vector
+`network` | A hopfield network
+`unit` | An adaptive parameter assigned to a node
+`correlation` | An adjacency matrix for the input feature space
+`weights` | A decomposition of the correlation matrix in excitatory, local & global inhibitory.
+`n` | Neuron or pixel
+`P` | Total number of neurons (n-by-n)
+`W` | Correlation matrix (P-by-P)
+`N` | Number of nodes (per neuron)
 `start_node` | Initial cortical unit
 `alpha` | Ratio between hetero- and auto- association
 `prob` | Sparsity or number of active neurons
 `temp` | Boltzmann distribution
 `H` | Hetero-associative weights (Asymmetric normalisation)
 `m` | Pattern overlap
-`xi` | Binary state vectors (one for each node)
+`xi` | Binary state vector (one for each neuron)
 `x` | Network response
 `I` | Initial condition (Binary afferent state vector)
 `sigmaX` | Spatial component (Euclidean)
