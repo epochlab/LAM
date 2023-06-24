@@ -6,6 +6,10 @@
   <img src="https://github.com/epochlab/LAM/blob/main/sample.png">
 </p>
 
+<p align="center">
+  <img src="https://raw.githubusercontent.com/epochlab/epochlab.github.io/main/images/patternSim_x_1e-3.gif">
+</p>
+
 --------------------------------------------------------------------
 
 ### Community structures of associative memory encoding
