@@ -11,23 +11,8 @@
 #### Community structures of associative memory encoding
 Abstract: *An extended network model for graph-based hierarchical computation, generating communities (clusters) of associative links between memory items, with scale regulated by the heterogenous modulation of inhibitory circuits.*
 
-### Concept
-- Chunking and clustering of items
-    - Increasing the number of items retained in the limited capacity of working memory
-- Segmentation of images & words
-    - Learning and comprehension of scenes/language
-- Temporal abstraction of repeated sequences
-    - Accelerate reinforcement learning
-
 ### What is the neurological representation?
-- Having experienced a seqence of events, the brain, learns the temporal associations between the successive events and captures the structure of a state-transition graph
-- Event segmentation performed by humans reflects community structures (clusters)
-- Characteristics of place cells and entorhinal grid cells
-- Asymmetrical links generate chunked sequential activities in the hippocampus
-- How strong is the relationship between hebbian learning, state attractors and sequential segmentation with the hippocampus?
-
-### Blurb (WIP)
-A binary recurrent network into which a embedded topological map structure can reveal patchy connectivity. By setting the state of hopfield network using a point of activation (start_node) and presenting stimulation with location and orientation components, the network identifies overlapping patterns and/or community clusters within the source data.
+A neural map is a collection of receptive fields which respond to different values of common stimulus; where cortical units correspond selectively to the occurance of selective events in the world. Adjacent neurons respond preferentially to similar patterns of afferent input, communicating across the cortical sheet.
 
 - Key features
     - Clustering
@@ -48,10 +33,10 @@ Parameter | Description
 `neuron` | A cell/unit of information
 `graph` | A structure of nodes
 `node` | Binary state vector
-`network` | A hopfield network
+`network` | Laplacian associative hopfield network
 `unit` | An adaptive parameter assigned to a node
 `correlation` | An adjacency matrix for the input feature space
-`weights` | A decomposition of the correlation matrix in excitatory, local & global inhibitory.
+`weights` | A decomposition of the correlation matrix into excitatory, local & global inhibitory.
 `n` | Neuron or pixel
 `P` | Total number of neurons (n-by-n)
 `W` | Correlation matrix (P-by-P)
@@ -64,9 +49,9 @@ Parameter | Description
 `m` | Pattern overlap
 `xi` | Binary state vector (one for each neuron)
 `x` | Network response
-`I` | Initial condition (Binary afferent state vector)
+`I` | Initial condition (Afferent initial state)
 `sigmaX` | Spatial component (Euclidean)
-`sigmaA` | Orientation preference (Value diff.)
+`sigmaA` | Orientation preference (Value)
 `e` | Energy
 
 ### References:
