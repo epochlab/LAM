@@ -68,7 +68,7 @@ def construct_SLAM(src, sigmaX=1.0, sigmaA=0.1):
         edgelist_w.append((n1, n2, corr))
 
     P = src.shape[0] * src.shape[1]
-    W = np.zeros([P, P])
+    W = np.zeros([P, P], dtype=np.float32)
     for x in edgelist_w:
         W[x[0],x[1]] = x[2]
         W[x[1],x[0]] = x[2]
