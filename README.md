@@ -26,7 +26,7 @@ A neural map is a collection of receptive fields which respond to different valu
     - Hopfield networks
     - Information efficiency
 
-#### Glossary
+#### Nomenclature
 Parameter | Description
 --- | ---
 `cortex` | A cortical sheet of neurons
