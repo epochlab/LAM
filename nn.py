@@ -1,6 +1,4 @@
-#!/usr/bin/env python3
-
-import numpy as np
+import torch
 from tqdm import tqdm
 
 class LAM():
@@ -15,35 +13,36 @@ class LAM():
         self.gamma = gamma              # Inhibition ratio (Regularisation)
         self.norm_mode = norm_mode      # Normalisation
 
-        self.V = self.prob * (1-self.prob)
+        self.V = self.prob * (1 - self.prob)
         self.NV = self.N * self.V
         
         self.start_node = start_node
         self.features = features
         self.temp = temp
 
-        # BINARY STATE VECTORS
-        self.xi = (np.random.rand(self.N, self.P) < self.prob).astype('float') # Binary dipole (+/-) input with sparsity
+        # Binary state vectors
+        self.xi = torch.rand(self.N, self.P) < self.prob
+        self.xi = self.xi.float()
 
         if self.temp!=None:
             state = self._set_state(self.features)
             self.xi[:, self.start_node] = state
             print("Using feature-based initial condition")
-            print("Sparsity:", np.sum(state/np.size(state)))
+            print("Sparsity:", torch.sum(state/torch.numel(state)))
 
-        self.xi_mean = np.sum(self.xi, axis=1, keepdims=True) / self.P # Mean activation of each neuron across all inputs
+        self.xi_mean = torch.sum(self.xi, dim=1, keepdim=True) / self.P # Mean activation of each neuron across all inputs
         self.xi_bias = self.xi - self.xi_mean
 
         # NORMALIZATION
         if self.norm_mode == "sym": # SYMMETRIC WEIGHTS
-            Dnorm = np.diag(np.sum(self.H, axis=1)**-0.5)
+            Dnorm = torch.diag(np.sum(self.H, axis=1)**-0.5).float()
             self.H = Dnorm @ self.H @ Dnorm
             self.Wauto = (self.xi_bias @ self.xi_bias.T) / self.NV
             self.Whetero = (self.xi_bias @ self.H @ self.xi_bias.T) / self.NV
             self.WG = self.gamma / self.N
 
         elif self.norm_mode == "asym": # ASYMMETRIC WEIGHTS
-            Dnorm = np.diag(np.sum(self.H, axis=1)**-1) # Degree matrix (D**-1*A)
+            Dnorm = torch.diag(torch.sum(self.H, dim=1)**-1).float() # Degree matrix (D**-1*A)
             self.H = Dnorm @ self.H # Hetero-associative weights
             self.Wauto = (self.xi @ self.xi.T) / self.NV # Local inhibition
             self.Whetero = (self.xi @ self.H @ self.xi.T) / self.NV # Excitatory
@@ -53,60 +52,46 @@ class LAM():
             exit()
 
     def _step(self, z): # Heaviside step function
-        return 0.5 * np.sign(z) + 0.5
-
+        return 0.5 * torch.sign(z) + 0.5
+    
     def _set_weight(self, a): # Decompose weights
         self.W = a * self.Wauto + self.Whetero - (a+1) * self.WG
 
     def _set_state(self, features):
-        I = np.zeros_like(self.xi) # Malloc
+        I = torch.zeros_like(self.xi) # Malloc
         for node in range(self.xi.shape[1]):
-            state = (self.xi[:, node].copy() * 2) - 1 # State of each node and re-map between -1 and 1
+            state = (self.xi[:, node].clone() * 2) - 1 # State of each node and re-map between -1 and 1
             I[:,node] = state * features.flatten()[node]
 
-        Inorm = np.sum(I, axis=1) * 1/self.xi.shape[1]
+        Inorm = torch.sum(I, axis=1) * 1/self.xi.shape[1]
         act = self._boltzmann_prob(Inorm, self.temp)
         return act
 
     def _boltzmann_prob(self, x, temp):
-        p = 1 / (1.0 + np.exp(-x/temp))
-        y = (np.random.rand(*x.shape) < p) * 1.0
+        p = 1 / (1.0 + torch.exp(-x/temp))
+        y = (torch.rand(*x.shape) < p) * 1.0
         return y
 
     def _kronecker_delta(self, i, j):
         return 1 if i==j else 0
 
     def simulate_single(self, a, eta, simlen, energycheck=True):
-        self._set_weight(a) # Set weight based on alpha
-        self.x = self.xi[:, self.start_node] + 0.0
-        
-        self.m_log = np.zeros([simlen, self.P])
-        self.n_log = np.zeros([simlen, self.N])
-        self.obj_log = np.zeros([simlen])
-        
-        for t in tqdm(range(simlen)):
-            self.r = self._step(self.W @ self.x) # Threshold activation (Response) - Input to each neuron, dot product of weight matrix (self.W) and current network state (self.x)
-            self.x += eta * (self.r - self.x) # Network update - Simple gradient descent, updating neuron activity as a weighted (eta) average of previous activity (x) to current input (r)
-            self.m = (self.xi_bias.T @ self.x) / self.NV # Pattern overlap / magnetisation - A measure of similarity between the state of the neuron and the average state of its neighbours in the network.
-            
-            self.m_log[t,:] = self.m # Update log
-            self.n_log[t,:] = self.x # Update log
+        self._set_weight(a)  # Set weight based on alpha
+        self.x = self.xi[:, self.start_node].clone()
 
-            if energycheck:
-                self.obj_log[t] = -(self.x).T @ self.W @ self.x / self.NV # Compute energy
-
-        return (self.m_log, self.n_log, self.obj_log)
-    
-    def simulate_allstarts(self, a, eta, simlen):
-        self._set_weight(a)
-        self.x = self.xi + 0.0
-        self.m_log = np.zeros([simlen,self.P,self.P])
+        self.m_log = torch.zeros([simlen, self.P])
+        self.n_log = torch.zeros([simlen, self.N])
+        self.obj_log = torch.zeros([simlen])
 
         for t in tqdm(range(simlen)):
-            self.r = self._step(self.W @ self.x)
+            self.r = self._step(self.W @ self.x)  # Use torch.matmul for matrix multiplication
             self.x += eta * (self.r - self.x)
-            self.m = (self.xi_bias.T @ self.x) / (self.N * self.V)
-            self.m_log[t,:,:] = self.m
+            self.m = (self.xi_bias.T @ self.x) / self.NV  # Use torch.matmul for matrix multiplication
+        
+            self.m_log[t,:] = self.m
+            self.n_log[t,:] = self.x
 
-        self.cor_activity = np.corrcoef(self.x.T) # Correlation between attractors
-        return (self.m_log, self.cor_activity)
+        if energycheck:
+            self.obj_log[t] = -(self.x).t() @ self.W @ self.x / self.NV # Compute energy
+
+        return self.m_log, self.n_log, self.obj_log
