@@ -115,15 +115,15 @@ def gabor_conv(img, src, step=20, k_size=5):
 
     for i in range(src.shape[0]):
         for j in range(src.shape[1]):
-            atan = src[i][j] - np.pi # Arc tangent | -π and π
-            deg = np.rad2deg(atan*0.5) # *0.5 to keep range between -90 and 90
+            rad = src[i][j] - np.pi # -π and π
+            # deg = np.rad2deg(atan*0.5) # *0.5 to keep range between -90 and 90
+            deg = np.rad2deg(rad)
             kernel = gabor_filter(1, 2, deg, samples=step, min=-k_size, max=k_size) # Orientation
             patch = pad_im[i:i+step, j:j+step]
             features[int(i+pad),int(j+pad)] = np.sum(patch * kernel) # Firing Rate / Response
 
     features = features[pad:pad+src.shape[0],pad:pad+src.shape[1]]
     features[features<=0] = 0 # Rectify
-
     return features
 
 def unit_count(x):
