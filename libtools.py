@@ -98,7 +98,7 @@ def gaussian(dist, sigma):
 def set_state(graph, features, temp):
     I = np.zeros_like(graph.xi) # Malloc
     for node in range(graph.xi.shape[1]):
-        state = (graph.xi[:, node].clone() * 2) - 1 # State of each node and re-map between -1 and 1
+        state = (graph.xi[:, node].copy() * 2) - 1 # State of each node and re-map between -1 and 1
         I[:,node] = state * features.flatten()[node]
 
     Inorm = np.sum(I, axis=1) * 1/graph.xi.shape[1]

@@ -7,7 +7,7 @@ class LAM():
     """
     LAPLACIAN ASSOCIATIVE MEMORY (LAM)
     """
-    def __init__(self, N, P, prob, H, gamma, norm_mode, start_node, features=None, temp=None):
+    def __init__(self, N, P, prob, H, gamma, norm_mode):
         self.N = N                      # Neurons (n)
         self.P = P                      # Random memory patterns (n)
         self.prob = prob                # Sparsity (Activation Probability)
@@ -53,10 +53,11 @@ class LAM():
     def simulate_single(self, a, eta, simlen, start_node, init_state=None, energycheck=True):
         self._set_weight(a) # Set weight based on alpha
 
-        if init_state==None:
+        if init_state.any()==None:
             self.x = self.xi[:, start_node] + 0.0
         else:
             self.x = init_state
+            print("Using feature-based initial condition")
         
         self.m_log = np.zeros([simlen, self.P])
         self.n_log = np.zeros([simlen, self.N])
