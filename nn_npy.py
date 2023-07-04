@@ -18,19 +18,8 @@ class LAM():
         self.V = self.prob * (1-self.prob)
         self.NV = self.N * self.V
         
-        self.start_node = start_node
-        self.features = features
-        self.temp = temp
-
         # BINARY STATE VECTORS
         self.xi = (np.random.rand(self.N, self.P) < self.prob).astype('float') # Binary dipole (+/-) input with sparsity
-
-        if self.temp!=None:
-            state = self._set_state(self.features)
-            self.xi[:, self.start_node] = state
-            print("Using feature-based initial condition")
-            print("Sparsity:", np.sum(state/np.size(state)))
-
         self.xi_mean = np.sum(self.xi, axis=1, keepdims=True) / self.P # Mean activation of each neuron across all inputs
         self.xi_bias = self.xi - self.xi_mean
 
@@ -58,27 +47,16 @@ class LAM():
     def _set_weight(self, a): # Decompose weights
         self.W = a * self.Wauto + self.Whetero - (a+1) * self.WG
 
-    def _set_state(self, features):
-        I = np.zeros_like(self.xi) # Malloc
-        for node in range(self.xi.shape[1]):
-            state = (self.xi[:, node].copy() * 2) - 1 # State of each node and re-map between -1 and 1
-            I[:,node] = state * features.flatten()[node]
-
-        Inorm = np.sum(I, axis=1) * 1/self.xi.shape[1]
-        act = self._boltzmann_prob(Inorm, self.temp)
-        return act
-
-    def _boltzmann_prob(self, x, temp):
-        p = 1 / (1.0 + np.exp(-x/temp))
-        y = (np.random.rand(*x.shape) < p) * 1.0
-        return y
-
     def _kronecker_delta(self, i, j):
         return 1 if i==j else 0
 
-    def simulate_single(self, a, eta, simlen, energycheck=True):
+    def simulate_single(self, a, eta, simlen, start_node, init_state=None, energycheck=True):
         self._set_weight(a) # Set weight based on alpha
-        self.x = self.xi[:, self.start_node] + 0.0
+
+        if init_state==None:
+            self.x = self.xi[:, start_node] + 0.0
+        else:
+            self.x = init_state
         
         self.m_log = np.zeros([simlen, self.P])
         self.n_log = np.zeros([simlen, self.N])

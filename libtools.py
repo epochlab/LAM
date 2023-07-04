@@ -95,6 +95,21 @@ def downsample(mat, factor):
 def gaussian(dist, sigma):
     return np.exp(-(dist**2/sigma))
 
+def set_state(graph, features, temp):
+    I = np.zeros_like(graph.xi) # Malloc
+    for node in range(graph.xi.shape[1]):
+        state = (graph.xi[:, node].clone() * 2) - 1 # State of each node and re-map between -1 and 1
+        I[:,node] = state * features.flatten()[node]
+
+    Inorm = np.sum(I, axis=1) * 1/graph.xi.shape[1]
+    act = boltzmann_prob(Inorm, temp)
+    return act
+
+def boltzmann_prob(x, temp):
+    p = 1 / (1.0 + np.exp(-x/temp))
+    y = (np.random.rand(*x.shape) < p) * 1.0
+    return y
+
 def gabor_filter(sigma_x, sigma_y, deg, samples=20, k=2, min=-5, max=5):
     gradient = np.linspace(min, max, samples)
     X, Y = np.meshgrid(gradient, gradient)
@@ -116,7 +131,7 @@ def gabor_conv(img, src, step=20, k_size=5):
     for i in range(src.shape[0]):
         for j in range(src.shape[1]):
             rad = src[i][j] - np.pi # -π and π
-            # deg = np.rad2deg(atan*0.5) # *0.5 to keep range between -90 and 90
+            # deg = np.rad2deg(rad*0.5) # *0.5 to keep range between -90 and 90
             deg = np.rad2deg(rad)
             kernel = gabor_filter(1, 2, deg, samples=step, min=-k_size, max=k_size) # Orientation
             patch = pad_im[i:i+step, j:j+step]

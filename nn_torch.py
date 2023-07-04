@@ -5,7 +5,7 @@ class LAM():
     """
     LAPLACIAN ASSOCIATIVE MEMORY (LAM)
     """
-    def __init__(self, N, P, prob, H, gamma, norm_mode, start_node, features=None, temp=None):
+    def __init__(self, N, P, prob, H, gamma, norm_mode):
         self.N = N                      # Neurons (n)
         self.P = P                      # Random memory patterns (n)
         self.prob = prob                # Sparsity (Activation Probability)
@@ -16,26 +16,15 @@ class LAM():
         self.V = self.prob * (1 - self.prob)
         self.NV = self.N * self.V
         
-        self.start_node = start_node
-        self.features = features
-        self.temp = temp
-
         # Binary state vectors
         self.xi = torch.rand(self.N, self.P) < self.prob
         self.xi = self.xi.float()
-
-        if self.temp!=None:
-            state = self._set_state(self.features)
-            self.xi[:, self.start_node] = state
-            print("Using feature-based initial condition")
-            print("Sparsity:", torch.sum(state/torch.numel(state)))
-
         self.xi_mean = torch.sum(self.xi, dim=1, keepdim=True) / self.P # Mean activation of each neuron across all inputs
         self.xi_bias = self.xi - self.xi_mean
 
         # NORMALIZATION
         if self.norm_mode == "sym": # SYMMETRIC WEIGHTS
-            Dnorm = torch.diag(np.sum(self.H, axis=1)**-0.5).float()
+            Dnorm = torch.diag(torch.sum(self.H, axis=1)**-0.5).float()
             self.H = Dnorm @ self.H @ Dnorm
             self.Wauto = (self.xi_bias @ self.xi_bias.T) / self.NV
             self.Whetero = (self.xi_bias @ self.H @ self.xi_bias.T) / self.NV
@@ -57,27 +46,17 @@ class LAM():
     def _set_weight(self, a): # Decompose weights
         self.W = a * self.Wauto + self.Whetero - (a+1) * self.WG
 
-    def _set_state(self, features):
-        I = torch.zeros_like(self.xi) # Malloc
-        for node in range(self.xi.shape[1]):
-            state = (self.xi[:, node].clone() * 2) - 1 # State of each node and re-map between -1 and 1
-            I[:,node] = state * features.flatten()[node]
-
-        Inorm = torch.sum(I, axis=1) * 1/self.xi.shape[1]
-        act = self._boltzmann_prob(Inorm, self.temp)
-        return act
-
-    def _boltzmann_prob(self, x, temp):
-        p = 1 / (1.0 + torch.exp(-x/temp))
-        y = (torch.rand(*x.shape) < p) * 1.0
-        return y
-
     def _kronecker_delta(self, i, j):
         return 1 if i==j else 0
 
-    def simulate_single(self, a, eta, simlen, energycheck=True):
+    def simulate_single(self, a, eta, simlen, start_node, init_state=None, energycheck=True):
         self._set_weight(a)  # Set weight based on alpha
-        self.x = self.xi[:, self.start_node].clone()
+
+        if init_state==None:
+            self.x = self.xi[:, start_node].clone()
+        else:
+            self.x = init_state
+            print("Using feature-based initial condition")
 
         self.m_log = torch.zeros([simlen, self.P])
         self.n_log = torch.zeros([simlen, self.N])
