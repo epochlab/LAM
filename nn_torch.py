@@ -33,7 +33,7 @@ class LAM():
             self.WG = self.gamma / self.N
 
         elif self.norm_mode == "asym": # ASYMMETRIC WEIGHTS
-            Dnorm = torch.diag(torch.sum(self.H, dim=1)**-1).float() # Degree matrix (D**-1*A)
+            Dnorm = torch.diag(torch.sum(self.H, axis=1)**-1).float() # Degree matrix (D**-1*A)
             self.H = Dnorm @ self.H # Hetero-associative weights
             self.Wauto = (self.xi @ self.xi.T) / self.NV # Local inhibition
             self.Whetero = (self.xi @ self.H @ self.xi.T) / self.NV # Excitatory
