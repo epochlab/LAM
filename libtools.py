@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 
-import itertools, math, imageio
+import itertools, imageio
 import numpy as np
 import matplotlib.pyplot as plt
 
@@ -118,7 +118,7 @@ def gabor_filter(sigma_x, sigma_y, deg, samples=20, k=2, min=-5, max=5):
     X = X * np.cos(rad) - Y * np.sin(rad)
     Y = X * np.sin(rad) + Y * np.cos(rad)
 
-    C = 1 / (2 * math.pi * sigma_x * sigma_y)
+    C = 1 / (2 * np.pi * sigma_x * sigma_y)
     z = C * np.exp(-(X**2) / (2 * sigma_x**2) - (Y**2) / (2 * sigma_y**2))
     gabor = np.cos(X * k) * z
     return gabor
