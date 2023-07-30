@@ -1,6 +1,6 @@
-itertools
+more-itertools
 numpy
-torch
+pytorch
 tqdm
 pillow
 imageio
