@@ -1,6 +1,6 @@
 # Laplacian Associative Memory (LAM)
 
-**Project ID:**  Tl44vh6a
+**Project ID:**  Tl44vh6b
 
 <p align="center">
   <img src="https://github.com/epochlab/LAM/blob/main/sample.png">
